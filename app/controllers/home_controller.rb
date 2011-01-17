@@ -5,7 +5,6 @@ def index
   if @tags = params[:tag]
     Tag.find(:all, :conditions => {:tag => params[:tag]}).inject(arr=[]) {|arr,f| arr << f.question_id}  
     @questions = Question.paginate(arr , :order => "created_at DESC", :include => [:answers, :tags], :page => params[:page] || 1, :per_page => 17)  
-<<<<<<< HEAD
   elsif params[:filter] == "date"
     @questions = Question.paginate(:all, :order => "created_at DESC", :include => [:answers, :tags], :page => params[:page] || 1, :per_page => 17)  
     @active = "Date"
@@ -13,7 +12,6 @@ def index
   elsif params[:filter] == "recent"
     @questions = Question.paginate(:all, :order => "created_at DESC", :include => [:answers, :tags], :page => params[:page] || 1, :per_page => 17)  
     @active = "Récence"
->>>>>>> 27030f05a1d66049283945d1af22a649a73781e4
   elsif params[:filter] == "votes"
     @questions = Question.paginate(:all, :order => "sum_of_votes DESC", :include => [:answers, :tags], :page => params[:page] || 1, :per_page => 17)  
     @active = "Votes"
