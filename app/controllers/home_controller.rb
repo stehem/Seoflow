@@ -8,10 +8,6 @@ def index
   elsif params[:filter] == "date"
     @questions = Question.paginate(:all, :order => "created_at DESC", :include => [:answers, :tags], :page => params[:page] || 1, :per_page => 17)  
     @active = "Date"
-=======
-  elsif params[:filter] == "recent"
-    @questions = Question.paginate(:all, :order => "created_at DESC", :include => [:answers, :tags], :page => params[:page] || 1, :per_page => 17)  
-    @active = "Récence"
   elsif params[:filter] == "votes"
     @questions = Question.paginate(:all, :order => "sum_of_votes DESC", :include => [:answers, :tags], :page => params[:page] || 1, :per_page => 17)  
     @active = "Votes"

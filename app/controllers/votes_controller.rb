@@ -15,10 +15,7 @@ if session[:id]
         #if !Vote.voting_on_self(poster.id, user.id)
           if params[:pos] == "true"
             @badge = Badge.upvote_global(user,poster,@question)
-<<<<<<< HEAD
             Badge.upvotes_received(@question,poster)
-=======
->>>>>>> 27030f05a1d66049283945d1af22a649a73781e4
             Vote.create(:question_id => params[:question_id], :user_id => user.id, :value => 1)
             @question.increment!(:sum_of_votes, by = 1)
             @flag = "OK"
@@ -51,10 +48,7 @@ if session[:id]
         #if !Vote.voting_on_self(poster.id, user.id)
           if params[:pos] == "true"
             @badge = Badge.upvote_global(user,poster,@answer)
-<<<<<<< HEAD
             Badge.upvotes_received(@answer,poster)
-=======
->>>>>>> 27030f05a1d66049283945d1af22a649a73781e4
             Vote.create(:answer_id => params[:answer_id], :user_id => user.id, :value => 1)
             @answer.increment!(:sum_of_votes, by = 1)
             @flag = "OK"

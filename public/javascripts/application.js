@@ -121,19 +121,10 @@ $(element).addClass("answer_form_validate");
 
 
 
-<<<<<<< HEAD
+
+
 $("#answer_new").validate({
 errorElement: "div",
-=======
-
-$("#answer_new").submit(function() {
-tinyMCE.triggerSave();
-});
-
-
-
-$("#answer_new").validate({
->>>>>>> 27030f05a1d66049283945d1af22a649a73781e4
 rules: {
 "answer[body]": {required: true}
 },
@@ -175,13 +166,13 @@ return false;
 });
 
 
-<<<<<<< HEAD
 
-=======
+
+
 $("#new_question").submit(function() {
 tinyMCE.triggerSave();
 });
->>>>>>> 27030f05a1d66049283945d1af22a649a73781e4
+
 
 
 $("#new_question").validate({

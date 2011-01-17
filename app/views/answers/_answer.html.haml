@@ -31,11 +31,7 @@
         =image_tag("correct_small.png") 
     
 
-<<<<<<< HEAD
   .grid_16.omega
-=======
-  .grid_17.omega
->>>>>>> 27030f05a1d66049283945d1af22a649a73781e4
     =raw answer.body
     <br/>
     - if @question.solved == 0 && @question.user.id == session[:id]
@@ -60,24 +56,11 @@
     -if session[:id]
       .reply_link
         %a{:href => "#", :class => "reply_link", :id => "#{answer.id}", :title => "Pour commenter une réponse."} Commenter
-<<<<<<< HEAD
-    -if session[:id] == answer.user.id
+
       .edit_link
         =link_to "Modifier", edit_answer_path(answer.id), :remote => true
         =link_to "Effacer", answer_path(answer.id), :remote => true, :method => "delete", :confirm => "Effacer cette réponse?"
 
-=======
-      -if defined?(answer_counter)
-        -if @question.answers[answer_counter].user.id == session[:id]
-          .edit_link
-            =link_to "Modifier", edit_answer_path(answer.id), :remote => true
-            =link_to "Effacer", answer_path(answer.id), :remote => true, :method => "delete", :confirm => "Effacer cette réponse?"
-      -else
-        -if answer.user.id == session[:id]
-          .edit_link
-            =link_to "Modifier", edit_answer_path(answer.id), :remote => true
-            =link_to "Effacer", answer_path(answer.id), :remote => true, :method => "delete", :confirm => "Effacer cette réponse?"
->>>>>>> 27030f05a1d66049283945d1af22a649a73781e4
 
   .clear
 

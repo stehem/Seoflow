@@ -7,21 +7,12 @@
   -else
     .home_menu_inactive
       =link_to "Activité" , root_url
-<<<<<<< HEAD
   -if @active == "Date"
     .home_menu_active
       =link_to "Date" , root_url(:filter => "date")
   -else
     .home_menu_inactive
       =link_to "Date" , root_url(:filter => "date")
-=======
-  -if @active == "Récence"
-    .home_menu_active
-      =link_to "Récence" , root_url(:filter => "recent")
-  -else
-    .home_menu_inactive
-      =link_to "Récence" , root_url(:filter => "recent")
->>>>>>> 27030f05a1d66049283945d1af22a649a73781e4
   -if @active == "Votes"
     .home_menu_active
       =link_to "Votes" , root_url(:filter => "votes")
@@ -45,12 +36,8 @@
   -if @tags
     .tags_result
       .tags_result_header  Questions taggées:
-<<<<<<< HEAD
       .selected_tags 
         =@tags
-=======
-      .selected_tags =@tags
->>>>>>> 27030f05a1d66049283945d1af22a649a73781e4
   =render :partial => "questions/questionheadline", :collection => @questions
     
 -if flash[:badge] && !flash[:badge].empty?
@@ -61,16 +48,10 @@
 
 -content_for :rightbar do
   .intro
-<<<<<<< HEAD
     SEO Flow est un site de questions réponses dédié à la thématique du <b>référencement/SEO</b>.
   =render :partial => "layouts/social"
   .user_tags
     %span{:class =>"home_side_headers"}Tags récents<br/><br/>
-=======
-    SEO Flow est un site de questions réponses dédié à la thématique du <b>référencement/SEO</b>. Connectez vous pour poser une question.
-  .user_tags
-    Tags récents<br/><br/>
->>>>>>> 27030f05a1d66049283945d1af22a649a73781e4
     - @tags_counts.each do |tag,count|
       %div
         <a href="/?tag=#{tag}">
@@ -81,22 +62,14 @@
           =count
       .clear
   .recent_badges
-<<<<<<< HEAD
     %span{:class =>"home_side_headers"}Badges récents<br/><br/>
-=======
-    Badges récents<br/><br/>
->>>>>>> 27030f05a1d66049283945d1af22a649a73781e4
     - @recent_badges.each do |f|
       .user_badges_each
         <a href="/badges/#{f.badgeid}"><div class="badges"><span class="badgeicon #{f.metal.downcase}"></span> #{f.badge_name}</div></a>  
         .clear
  
   .recent_badges
-<<<<<<< HEAD
     %span{:class =>"home_side_headers"}Membres récents
-=======
-    Membres récents
->>>>>>> 27030f05a1d66049283945d1af22a649a73781e4
     =render :partial => "user/users" , :collection => @users, :as => :user
 
 

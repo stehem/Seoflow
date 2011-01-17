@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-<script type="text/javascript">
-wmd_options = {
-lineLength: 40,
-buttons: "bold italic | link blockquote | ol ul"
-};
-</script>
-
-%script{:type => "text/javascript", :src => "/javascripts/wmd-1.0.1/wmd/wmd.js"}
-
-=======
->>>>>>> 27030f05a1d66049283945d1af22a649a73781e4
 .answer_form
 
   =flash.now[:error]
@@ -25,32 +13,16 @@ buttons: "bold italic | link blockquote | ol ul"
     %div Réponse:
 
     %div
-<<<<<<< HEAD
-      =f.text_area :body
-
-
-    %div
-      Prévisualiser:
-
-    %div{:class => "wmd-preview", :id => "preview_question"}
-=======
       =f.text_area :body, :class => "mceEditor"
 
 
 
->>>>>>> 27030f05a1d66049283945d1af22a649a73781e4
 
     %input{:id => "answer_question_id",
       :name => "answer[question_id]",
       :type => "hidden",
       :value => "#{question_id}"}
 
-<<<<<<< HEAD
-    =submit_tag "Valider", :class => "submit_button"
-
-  
-
-=======
     =submit_tag "OK", :class =>"simple_submit"
 
   
@@ -71,4 +43,3 @@ editor_selector :"mceEditor"
 });
 </script>
 <!-- /TinyMCE -->
->>>>>>> 27030f05a1d66049283945d1af22a649a73781e4
