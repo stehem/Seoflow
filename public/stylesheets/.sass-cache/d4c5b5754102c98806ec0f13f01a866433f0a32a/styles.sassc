@@ -1,5 +1,5 @@
 3.0.9 (Classy Cassidy)
-45711b86c962088811b74354586330189bbf4a35
+ece9c535302930f173d49b8800646ccdec35389d
 o:Sass::Tree::RootNode	:@template"?$orange: #FF6600
 $blue: #214263
 $rightbar: #FFF8DC
@@ -205,7 +205,7 @@ body
   padding-top: 15px
 
 .home_menu_left_header
-  width: 408px
+  width: 435px
   float: left
   border-bottom: 1px solid black
   padding: 4px 10px 0 0
@@ -1250,7 +1250,7 @@ coloro;);i»;*i ;@;T;+["#preview_question;@;[	o;,;i¼;*i ;@;&o;9;
 widtho;,;i½;*i ;@;&o;9;i½;@;:"	80px;&iU;;[ ;';(;<["px;@;[ ;.;/;["heighto;A;i¾;@;@;[ ;?[ ;"question_formo;,;i¿;*i ;@;&o;4
 ;i¿;@;&"	auto;5;6;';(;@;[ ;.;/;["overflowo;);iÂ;*i ;@;T;+[".question_gdl;@;[o;,;iÃ;*i ;@;&o;4
 ;iÃ;@;&"	none;5;6;';(;@;[ ;.;/;["displayo;);iÆ;*i ;@;T;+["#tags_index;@;[o;,;iÇ;*i ;@;&o;9;iÇ;@;:"	30px;&i#;;[ ;';(;<["px;@;[ ;.;/;["margin-topo;);iÊ;*i ;@;T;+["#left_container_home;@;[o;,;iË;*i ;@;&o;9;iË;@;:"	15px;&i;;[ ;';(;<["px;@;[ ;.;/;["padding-topo;);iÍ;*i ;@;T;+[".home_menu_left_header;@;[	o;,;iÎ;*i ;@;&o;9;iÎ;@;:"
-408px;&i˜;;[ ;';(;<["px;@;[ ;.;/;["
+435px;&i³;;[ ;';(;<["px;@;[ ;.;/;["
 widtho;,;iÏ;*i ;@;&o;4
 ;iÏ;@;&"	left;5;6;';(;@;[ ;.;/;["
 floato;,;iÐ;*i ;@;&o;0;iÐ;1;=;@;3o; 
