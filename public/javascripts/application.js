@@ -122,9 +122,13 @@ $(element).addClass("answer_form_validate");
 
 
 
+$("#answer_new").submit(function() {
+tinyMCE.triggerSave();
+});
+
+
 
 $("#answer_new").validate({
-errorElement: "div",
 rules: {
 "answer[body]": {required: true}
 },
@@ -166,13 +170,9 @@ return false;
 });
 
 
-
-
-
 $("#new_question").submit(function() {
 tinyMCE.triggerSave();
 });
-
 
 
 $("#new_question").validate({
