@@ -1,0 +1,8 @@
+#left_container_home
+  .bio_headlines
+    Questions favorites<br/><br/>
+  -if !@favorites.blank?
+    =render :partial => "questions/questionheadline", :collection => @favorites
+  -else
+    Vous n'avez pas de questions 
+    favorites pour l'instant.

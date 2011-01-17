@@ -1,0 +1,22 @@
+.user_stats
+  .user_stats_top
+    = "Il y a " + time_ago_in_words(item.created_at)
+  .user_stats_left
+    = image_tag avatar_url(item.user)
+  .user_stats_right
+    .user_stats_right_top
+      = link_to item.user.name, user_path(item.user)
+    .user_stats_right_bottom
+      .karma{:title => "Nombre de points de réputation."}        
+        = item.user.sum_of_karma
+      .medals{:title => "Nombre de badges or, argent et bronze gagnés"}     
+        - unless item.user.sum_of_gold == 0
+          = item.user.sum_of_gold
+          .badgeicon.gold
+        - unless item.user.sum_of_silver == 0
+          = item.user.sum_of_silver
+          .badgeicon.silver
+        - unless item.user.sum_of_bronze == 0
+          = item.user.sum_of_bronze
+          .badgeicon.bronze
+            

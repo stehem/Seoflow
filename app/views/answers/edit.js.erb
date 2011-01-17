@@ -1,0 +1,10 @@
+<<<<<<< HEAD
+var selector = "#answer_" + <%= @answer.id %> + " > .grid_16";
+=======
+var selector = "#answer_" + <%= @answer.id %> + " > .grid_17";
+>>>>>>> 27030f05a1d66049283945d1af22a649a73781e4
+$(selector).empty();
+$(selector).hide();
+$(selector).append("<%= escape_javascript(render(:partial => "answers/edit", :object => @answer)) %>");  
+$(selector).fadeIn(1000);
+

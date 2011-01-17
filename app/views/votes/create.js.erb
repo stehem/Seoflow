@@ -1,0 +1,30 @@
+<% if @flag == "OK"%>
+  <% if @item == "question"%>
+    $("div#questionvote_<%= @question.id %>").empty();
+    $("div#questionvote_<%= @question.id %>").append("<%= @question.sum_of_votes  %>");
+    $("div#questionvote_<%= @question.id %>").effect("pulsate", { times:3 }, 500);
+  <% elsif @item == "answer"%>
+    $("div#answervote_<%= @answer.id %>").empty();
+    $("div#answervote_<%= @answer.id %>").append("<%= @answer.sum_of_votes  %>");
+    $("div#answervote_<%= @answer.id %>").effect("pulsate", { times:3 }, 500);
+  <% end %>
+
+<% elsif @flag == "not_logged_in" && @item == "question" %>
+$("div.question_left").append("<%= escape_javascript(render(:partial => "sessions/error", :locals => {:message => "Vous devez être identifié pour voter"})) %>");  
+
+<% elsif @flag == "not_logged_in" && @item == "answer" %>
+$("div#answer_votes_<%= @answer_id %>").append("<%= escape_javascript(render(:partial => "sessions/error", :locals => {:message => "Vous devez être identifié pour voter"})) %>");  
+
+<% elsif @flag == "self_voting" %>
+$("div.question_left").append("<%= escape_javascript(render(:partial => "sessions/error", :locals => {:message => "Pas de autovotage"})) %>");  
+<% elsif @flag == "already_voted" %>
+$("div.question_left").append("<%= escape_javascript(render(:partial => "sessions/error", :locals => {:message => "Déja voté"})) %>");  
+<% end %>
+
+<% if @badge %>
+  $.notifyBar({
+    html: "<%= 'Vous avez gagné le badge ' + @badge  %>",
+    delay: 2000,
+    animationSpeed: "normal"
+  });  
+<% end %>

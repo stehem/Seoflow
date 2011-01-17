@@ -1,0 +1,6 @@
+var selector = ".question_body";
+$(selector).empty();
+$(selector).hide();
+$(selector).append("<%= escape_javascript(render(:partial => "questions/edit", :object => @question)) %>");  
+$(selector).fadeIn(1000);
+

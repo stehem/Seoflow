@@ -1,0 +1,7 @@
+<% if !@unfav %>
+$("a.favorite").removeClass("favorite").addClass("favorite-on");
+$("a.favorite-on").hide(0);
+$("a.favorite-on").fadeIn(1000);
+<% else %>
+$("a.favorite-on").removeClass("favorite-on").addClass("favorite");
+<% end %>

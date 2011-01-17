@@ -1,0 +1,74 @@
+<<<<<<< HEAD
+<script type="text/javascript">
+wmd_options = {
+lineLength: 40,
+buttons: "bold italic | link blockquote | ol ul"
+};
+</script>
+
+%script{:type => "text/javascript", :src => "/javascripts/wmd-1.0.1/wmd/wmd.js"}
+
+=======
+>>>>>>> 27030f05a1d66049283945d1af22a649a73781e4
+.answer_form
+
+  =flash.now[:error]
+
+  =form_for @answer , :as => :answer , :url => answers_path , :remote => true  do |f|
+    
+    -if @answer.errors.any?
+      .header
+        -@answer.errors.full_messages.each do |msg|  
+          %li
+            =msg  
+
+    %div Réponse:
+
+    %div
+<<<<<<< HEAD
+      =f.text_area :body
+
+
+    %div
+      Prévisualiser:
+
+    %div{:class => "wmd-preview", :id => "preview_question"}
+=======
+      =f.text_area :body, :class => "mceEditor"
+
+
+
+>>>>>>> 27030f05a1d66049283945d1af22a649a73781e4
+
+    %input{:id => "answer_question_id",
+      :name => "answer[question_id]",
+      :type => "hidden",
+      :value => "#{question_id}"}
+
+<<<<<<< HEAD
+    =submit_tag "Valider", :class => "submit_button"
+
+  
+
+=======
+    =submit_tag "OK", :class =>"simple_submit"
+
+  
+
+
+
+
+<!-- TinyMCE -->
+<script type="text/javascript" src="/javascripts/tinymce/jscripts/tiny_mce/tiny_mce.js"></script>
+<script type="text/javascript">
+tinyMCE.init({
+mode : "textareas",
+theme : "advanced",
+theme_advanced_buttons1 : "bold,italic,link,unlink,bullist,blockquote,undo", 
+theme_advanced_buttons2 : "", 
+theme_advanced_buttons3 : "",
+editor_selector :"mceEditor"
+});
+</script>
+<!-- /TinyMCE -->
+>>>>>>> 27030f05a1d66049283945d1af22a649a73781e4

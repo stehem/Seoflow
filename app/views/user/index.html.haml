@@ -1,0 +1,33 @@
+<<<<<<< HEAD
+.user_page
+  .user_search
+    Rechercher un membre:
+    %input#users_search
+
+  .users_index
+
+    =render :partial => "user/users2" , :collection => @users, :as => :user
+
+  .clear
+=======
+.user_search
+  Rechercher un membre:
+  %input#users_search
+
+.users_index
+
+  =render :partial => "user/users2" , :collection => @users, :as => :user
+
+.clear
+>>>>>>> 27030f05a1d66049283945d1af22a649a73781e4
+
+=will_paginate @users
+
+
+-content_for :rightbar do 
+  .intro
+<<<<<<< HEAD
+    %span{:class =>"home_side_headers"}Les membres sont classés par points de réputation. Utilisez la boîte de recherche pour accéder à un profil.
+=======
+    Les membres sont classés par points de réputation. Utilisez la boîte de recherche pour accéder à un profil.
+>>>>>>> 27030f05a1d66049283945d1af22a649a73781e4

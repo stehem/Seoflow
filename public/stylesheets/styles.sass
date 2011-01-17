@@ -1,0 +1,1206 @@
+$orange: #FF6600
+$blue: #214263
+$rightbar: #FFF8DC
+$body: #FFFAFA
+$pastel_yellow: #FFFACD
+$light_beige_pastel: #F5F5DC
+$blue_link: #214263
+$logo: #62920A
+
+body
+  background: $body
+  font-family: 'Droid Sans', Helvetica, Arial, 'Liberation Sans', 'DejaVu Sans', sans
+  margin: 0px
+
+
+.topline
+  height: 15px
+  margin-bottom: 5px
+  background: #DCDCDC
+  padding-top: 2px 
+  padding-bottom: 2px 
+
+.topline a  
+  color: #14273B
+
+.logo
+  margin-top: 12px
+
+.main
+  min-height: 800px
+
+.mainleft
+  margin-top: 30px
+
+
+
+.rightbar
+  padding-top: 25px
+
+.topright
+  text-align: right
+  a:visited
+    color: #222235
+  a
+    color: #222235
+
+
+.bottomline
+  background: #DCDCDC
+  height: 20px
+  margin-top: 100px
+  text-align: center
+  padding-top: 10px
+  font-size: 60%
+
+
+.formats
+  margin: 15px 0 0 0
+  padding: 0
+  li
+    list-style: none
+  li a
+    display: inline-block
+  a
+    outline: none
+    display: block
+    margin: 0 1px
+    padding: 5px 10px
+    border: 1px solid rgba(255,255,255,0.4)
+    background: -webkit-gradient(linear,left bottom, left top,    color-stop(0, #83C704),    color-stop(0.58, #62920A))
+    background: -moz-linear-gradient(center bottom, #83C704 0%,#62920A 58%)
+    -moz-box-shadow: 2px 2px 2px #888
+    -webkit-box-shadow: 2px 2px 2px #888
+    -webkit-border-radius: 5px
+    -moz-border-radius: 5px
+    color: white
+    text-decoration: none
+  a:hover 
+    text-decoration: none
+    background: #214263
+
+
+.submit_button
+<<<<<<< HEAD
+  background: gray
+  color: white
+  border: 1px solid $body
+=======
+  background: #214263
+  color: white
+  border: 1px solid rgba(255,255,255,0.4)
+>>>>>>> 27030f05a1d66049283945d1af22a649a73781e4
+  -webkit-border-radius: 5px
+  -moz-border-radius: 5px
+  padding: 5px 5px
+  margin-top: 10px
+
+.submit_button:hover
+<<<<<<< HEAD
+  background: lightgray
+  color: black
+  border: 1px solid black
+=======
+  border: 2px solid $body
+>>>>>>> 27030f05a1d66049283945d1af22a649a73781e4
+
+#logo
+  padding-top: 3px
+
+@mixin question_form
+  border-bottom: 1px solid #DDD
+  border-left: 2px solid #CCC
+  border-right: 1px solid #DDD
+  border-top: 2px solid #CCC
+
+#question_title
+  width: 600px
+  height: 20px
+
+
+
+#question_body
+  width: 600px
+<<<<<<< HEAD
+  height: 200px
+
+=======
+  height: 100px
+>>>>>>> 27030f05a1d66049283945d1af22a649a73781e4
+
+
+#tags_box
+  width: 100px
+  height: 20px
+
+
+.question_form_field
+  @include question_form
+
+.question_validate_title
+  width: 600px
+  height: 20px
+  border: 1px dotted red
+
+.question_validate_body
+  width: 600px
+  height: 80px
+  border: 1px dotted red
+
+.tags_validate
+  border: 1px dotted red
+
+.header
+  margin-top: 30px
+  margin-bottom: 30px
+  font-size: 20px
+
+
+.tags
+  display: inline
+
+.selected_tags
+  background-color: #EEE
+  border-bottom: 1px solid #CCC
+  border-right: 1px solid #CCC
+  color: #777
+  font-size: 11px
+  font-weight: bold
+  padding: 3px 8px
+  text-decoration: none
+  white-space: nowrap
+  display: inline-block
+  margin-right: 5px
+  margin-bottom: 5px
+
+
+
+
+.question_tags a
+  text-decoration: none
+
+
+.selected_tags:hover
+  background-color: $blue
+  color: white
+
+.label
+  font-weight: bold
+
+
+.reset_tags
+  font-size: 80%
+  color: #FF6600
+
+.question_title
+  font-size: 24px
+
+
+#add_link 
+  color: $orange
+
+
+#preview_question
+  width: 600px
+  height: 80px
+  @include question_form
+  overflow: auto
+
+
+.question_gdl
+  display: none
+
+
+#tags_index
+  margin-top: 30px
+
+
+#left_container_home
+  padding-top: 15px
+
+.home_menu_left_header
+<<<<<<< HEAD
+  width: 435px
+=======
+  width: 408px
+>>>>>>> 27030f05a1d66049283945d1af22a649a73781e4
+  float: left
+  border-bottom: 1px solid black
+  padding: 4px 10px 0 0
+
+.home_menu_active
+  border-left: 1px solid black
+  border-top: 1px solid black
+  border-right: 1px solid black
+  display: inline-block
+  float: left
+  padding: 4px 10px 0 10px
+  -moz-border-radius: 10px 10px 0 0 
+  -webkit-border-radius: 10px 10px 0 0 
+  a
+    color: black
+    text-decoration: none
+
+
+
+.home_menu_inactive
+  display: inline-block
+  float: left
+  border-bottom: 1px solid black
+  padding: 4px 10px 0 10px
+  a
+    color: black
+    text-decoration: none
+
+
+
+
+.tab_spacer
+  border-bottom: 1px solid black
+  display: inline-block
+  float: left
+  padding: 4px 4px 0 4px
+
+
+
+.question_header
+  font-size: 17px
+  color: #14273B
+  font-weight: bold
+  margin-bottom: 10px
+  a:visited
+    color: #214263
+  a
+    color: #214263
+
+
+
+
+
+.question_home
+  border-bottom: 1px dotted #DDD
+  margin-bottom: 10px
+  padding-bottom: 5px
+
+
+.question_tags
+  display: inline
+
+
+.counts
+  display: inline
+
+
+
+
+
+
+
+
+
+
+.votes , .status , .views
+  border: 1px solid #CCC
+  float: left
+  font-size: 11px
+  height: 42px
+  margin: 0px 6px 0px 0px
+  padding: 8px 2px 0px
+  text-align: center
+  width: 46px
+  background: white
+  -moz-box-shadow: 2px 2px 2px #888
+  -webkit-box-shadow: 2px 2px 2px #888
+
+
+.item-count
+  color: #666
+  font-size: 17px
+  font-weight: bold
+
+
+.unanswered 
+  background: #F3E3E1 none repeat scroll 0px 0px
+  color: #6B2B28
+
+
+.answered 
+  background: #E5EBF8 none repeat scroll 0px 0px
+  color: #314362
+
+
+.answered-accepted
+  background: #E6F8DD none repeat scroll 0px 0px
+  color: #3A6231
+
+
+.userheadline
+  float: right
+  color: #666
+  font-size: 11px
+  padding-top: 8px
+
+.user_stats_top
+  color: #666
+  font-size: 11px
+
+.badge_gold
+  color: #C93
+
+
+.badges
+  outline: none
+  display: inline
+  padding: 3px 10px
+  border-top: 1px solid rgba(255,255,255,0.4)
+  background: #214263
+  text-align: center
+  -webkit-box-shadow: 1px 1px 0 rgba(0,0,0,0.4)
+  -webkit-border-radius: 5px
+  -moz-border-radius: 5px
+  color: white
+  font-weight: bold
+  font-size: 13px
+  float: left
+
+
+
+
+.badges_index
+<<<<<<< HEAD
+  margin-top: 25px
+  a
+    text-decoration: none
+  background: $light_beige_pastel
+  padding: 10px
+  -webkit-border-radius: 10px 10px 10px 10px
+  -moz-border-radius: 10px 10px 10px 10px
+
+
+.user_page
+  -webkit-border-radius: 10px 10px 10px 10px
+  -moz-border-radius: 10px 10px 10px 10px
+  background: $light_beige_pastel
+  padding: 0 10px 10px 10px
+  margin-top: 25px
+=======
+  margin-top: 40px
+  a
+    text-decoration: none
+
+
+>>>>>>> 27030f05a1d66049283945d1af22a649a73781e4
+
+.question_page
+  margin-top: 30px
+
+
+.question_title
+  color: #444
+  font-size: 24px
+  font-weight: bold
+  border-bottom: 1px solid #444
+  padding-bottom: 5px
+
+
+.question_body
+  color: #222
+  font-size: 16px
+  margin-top: 10px
+  margin-bottom: 10px
+  a
+    color: $blue
+<<<<<<< HEAD
+  padding-right: 20px
+=======
+>>>>>>> 27030f05a1d66049283945d1af22a649a73781e4
+
+.modify_link
+  color: $blue
+  font-size: 80%
+  
+
+.tags_right_header
+  color: #444
+  font-size: 17px
+  font-weight: bold
+  margin-bottom: 5px
+  margin-top: 40px
+
+
+#answer_body
+  width: 600px
+<<<<<<< HEAD
+  height: 140px
+=======
+  height: 80px
+>>>>>>> 27030f05a1d66049283945d1af22a649a73781e4
+  border: 1px solid lightgray
+
+
+.answer_form
+  margin-top: 40px
+
+
+.question
+  margin-bottom: 20px
+  margin-top: 20px
+
+
+.answer
+  margin-bottom: 15px
+  margin-top: 15px
+  border-bottom: 1px solid #444
+  padding-bottom: 0px
+  font-size: 15px
+
+
+
+
+.has_no_answers
+  border-bottom: 1px solid #444
+
+
+.answer_count
+  color: #444
+  font-size: 20px
+  font-weight: bold
+  border-bottom: 1px solid #444
+
+
+.answer_votes
+  float: left
+  width: 25px
+  text-align: center
+
+
+.answer_votes_score
+  color: #777
+  font-weight: bold
+  font-size: 115%
+  padding-bottom: 3px
+  height: 17px
+
+
+
+
+
+
+.reply_link
+  float: right
+  display: inline-block
+  margin-bottom: 2px
+  font-size: 85%
+
+.reply_box_hidden
+  display: none
+
+
+
+.hidden
+  display: none
+
+
+.replies
+  padding-bottom: 3px
+
+
+.reply_body
+  width: 100%
+  height: 50px
+  border: 1px solid lightgray
+
+.reply
+  padding-top: 5px
+  border-top: 1px dotted #444
+  margin-bottom: 5px
+  font-size: 12px
+
+
+.replier
+  color: #666
+  font-size: 11px
+  float: right
+
+.answer_form_validate
+  border: 1px dotted red
+
+.solved_link
+  float: left
+  font-size: 80%
+  color: $blue
+  a
+    color: $blue
+  margin-top: 15px
+  
+
+.reply_link
+  a
+    color: black
+
+
+.edit_link
+  a
+    color: $blue
+  font-size: 80%
+
+.solved
+  float: left
+
+.stats_wrapper
+  margin-bottom: 5px
+  
+
+.avatar
+  float: left
+  margin-right: 10px
+
+.stats_wrapper_bottom_right
+  float: left
+
+
+
+.edit_link
+
+  font-style: italic
+  font-size: 75%
+
+.date_posted
+  font-size: 12px
+
+.user_stats
+  font-size: 12px
+  padding-top: 3px
+  margin-top: 10px
+  a
+    color: $blue_link
+
+.user_stats_index
+  font-size: 12px
+  padding-top: 3px
+  margin-top: 20px
+  a
+    color: $blue_link
+  float: left
+  margin-right: 20px
+
+.question_votes_score
+  color: #777
+  font-weight: bold
+  padding-bottom: 3px
+  height: 17px
+  text-align: center
+  padding-right: 5px
+
+.question_left
+  margin-top: 10px
+
+@mixin vote_images
+  display: block
+  height: 27px
+  width: 25px
+
+.vote_up
+  background: url(/images/vote-arrow-up.png) no-repeat 
+  @include vote_images
+
+.vote_up:hover
+  background: url(/images/vote-arrow-up-on.png) no-repeat 
+  @include vote_images
+
+.vote_down
+  background: url(/images/vote-arrow-down.png) no-repeat 
+  @include vote_images
+
+.vote_down:hover
+  background: url(/images/vote-arrow-down-on.png) no-repeat 
+  @include vote_images
+
+$lightgrey: #666
+
+.user_stats_left
+  float: left
+
+.user_stats_right
+  float: left
+
+.user_stats_top
+  margin-bottom: 3px
+
+.user_stats_right
+  margin-left: 3px
+
+.user_stats_right_top
+  margin-bottom: 3px
+
+.karma
+  font-weight: bold
+  float: left
+  margin-right: 3px
+
+.error_notification
+  -webkit-box-shadow: black 2px 2px 5px
+  -moz-box-shadow: black 2px 2px 5px
+  cursor: pointer
+  padding: 15px
+  position: absolute
+  z-index: 1
+  background-color: $orange
+  color: white 
+
+.error_notif_small
+  font-size: 70%
+
+.medals
+  display: inline
+
+.badgeicon
+  border-bottom-left-radius: 8px 8px
+  border-bottom-right-radius: 8px 8px
+  border-top-left-radius: 8px 8px
+  border-top-right-radius: 8px 8px
+  -moz-border-radius: 8px 8px 8px 8px
+  display: inline-block
+  height: 5px
+  margin-bottom: 2px
+  width: 5px
+
+.badgeicon.bronze
+  background: #E1A970
+
+.badgeicon.silver
+  background: silver
+
+.badgeicon.gold
+  background: #FC0
+
+#spinner
+  bottom: 35px
+  margin: 0px
+  position: fixed
+  left: 30px
+
+.user_details_wrapper_right
+  background-color: #EEE
+  line-height: 20px
+  padding: 10px
+  margin-top: 10px
+  a
+    color: $blue_link
+
+
+.user_details_wrapper_left
+  line-height: 20px
+  padding: 10px
+  background: $light_beige_pastel
+  margin-top: 10px
+  a
+    color: $blue_link
+    font-size: 80%
+
+.bio_modif
+  color: $blue_link
+  font-size: 80%
+
+.user_questions
+  margin-top: 10px
+  padding: 10px
+
+  a:visited
+    color: $blue
+  a
+    color: $blue
+
+
+.user_questions_links
+  margin-top: 10px
+
+
+.user_answers
+  margin-top: 10px
+  padding: 10px
+  a:visited
+    color: $blue
+  a
+    color: $blue
+
+.user_page_tags
+  margin-top: 10px
+  padding: 10px
+
+
+.user_badges
+  margin-top: 10px
+  padding: 10px
+
+.user_votes
+  padding: 10px
+
+.bio_votes
+  float: left
+  margin-right: 5px
+
+.bio_votes_count
+  float: left
+  margin-right: 5px
+  margin-top: 3px
+
+.bio_votes_wrapper
+  margin-top: 10px
+
+.bio_tags
+  margin-top: 10px
+
+
+.tags_wrapper
+  float: left
+  margin-right: 10px
+
+.user_tags
+  padding: 10px
+<<<<<<< HEAD
+  margin: 10px 0 20px 0
+  background: $pastel_yellow
+  position: relative
+  -webkit-border-radius: 10px 0 10px 10px
+  -moz-border-radius: 10px 0 10px 10px
+=======
+  margin: 20px 0 20px 0
+  background: $pastel_yellow
+  position: relative
+>>>>>>> 27030f05a1d66049283945d1af22a649a73781e4
+
+.badge_desc
+  float: left
+  margin-left: 5px
+  margin-top: 2px
+
+.tags_count_value
+  margin-top: 1px
+  float: left
+
+@mixin folded
+  content: ""
+  position: absolute
+  top: 0
+  right: 0
+  border-width: 0 16px 16px 0
+  border-style: solid
+  border-color: #D3D3D3 $body
+  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2)
+  -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2)
+  box-shadow: 0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2)
+  display: block 
+  width: 0 
+
+.user_tags:before 
+  @include folded
+
+
+.user_tags a
+  text-decoration: none
+  color: #777
+
+.user_tags a:hover
+  color: white
+
+.favorite
+  background: url(/images/vote-favorite-off.png) no-repeat 
+  @include vote_images
+
+.favorite:hover
+  background: url(/images/vote-favorite-on.png) no-repeat 
+  @include vote_images
+
+.favorite-on
+  background: url(/images/vote-favorite-on.png) no-repeat 
+  @include vote_images
+
+.recent_badges
+  padding: 15px 10px 10px 10px
+  a
+    font-size: 12px
+    text-decoration: none
+  a:visited
+    color: #14273B
+  background: #F5F5DC
+  margin: 20px 0 
+  position: relative
+<<<<<<< HEAD
+  -webkit-border-radius: 10px 0 10px 10px
+  -moz-border-radius: 10px 0 10px 10px
+=======
+>>>>>>> 27030f05a1d66049283945d1af22a649a73781e4
+
+.recent_badges:before 
+  @include folded
+
+
+.intro
+  padding: 10px
+  margin: 20px 0 20px 0
+  background: #E8F1DE
+  position: relative
+  a
+    color: $blue
+<<<<<<< HEAD
+  -webkit-border-radius: 10px 0 10px 10px
+  -moz-border-radius: 10px 0 10px 10px
+=======
+>>>>>>> 27030f05a1d66049283945d1af22a649a73781e4
+
+.intro:before
+  @include folded
+
+.tags_and_count
+  display: inline-block
+  width: 170px
+  margin: 10px 0px 5px 0px
+  height: 30px
+
+
+
+.user_badge_count
+  float: left
+  margin-left: 10px
+  padding-top: 4px
+  color: #777
+  font-weight: bold
+  font-size: 115%
+
+.users_index
+  margin: 20px 0 0 0
+
+.user_stats_user
+  font-size: 12px
+  padding-top: 3px
+  margin: 10px 40px 0 0
+  float: left
+
+#users_search
+  margin-top: 40px
+
+.pagination
+  a
+    border: 1px solid #CCC
+    text-decoration: none
+    padding: 2px 
+    color: #214263
+  a:hover
+    color: white
+    background-color: $blue
+  a:visited
+    color: #214263
+  margin-top: 70px
+
+.ajax_pagination
+  a
+    border: 1px solid #CCC
+    text-decoration: none
+    padding: 2px 
+    color: #214263
+  a:hover
+    color: white
+    background-color: $blue
+  a:visited
+    color: #214263
+  margin-top: 20px
+
+
+.similars
+  a:visited
+    color: $blue
+  a
+    color: $blue
+    text-decoration: none
+  background: $light_beige_pastel
+  padding: 10px
+  position: relative
+
+.similars:before 
+  @include folded
+
+.global_search
+<<<<<<< HEAD
+  margin-top: 30px
+  padding: 10px
+  background: #E8F1DE
+  -webkit-border-radius: 10px
+  -moz-border-radius: 10px
+=======
+  margin-top: 45px
+  padding: 10px
+  background: #E8F1DE
+>>>>>>> 27030f05a1d66049283945d1af22a649a73781e4
+
+.my_favorites
+  a
+    color: $blue
+  margin-top: 45px
+  border: 1px solid lightgray
+  padding: 10px
+  text-align: center
+  background: #DCDCDC
+
+.results
+  margin-top: 30px
+
+#search
+  background: url(/images/search-icon.png) no-repeat scroll 0 50% white
+  padding-left: 15px
+  border: 1px solid gray
+
+.social_icons
+  padding: 10px
+
+.tags_page 
+  background: $light_beige_pastel
+  padding: 0px 0px 20px 10px
+<<<<<<< HEAD
+  margin-top: 25px
+  -webkit-border-radius: 10px 10px 10px 10px
+  -moz-border-radius: 10px 10px 10px 10px
+
+
+=======
+  margin-top: 40px
+
+.user_search
+  margin-top: 5px
+>>>>>>> 27030f05a1d66049283945d1af22a649a73781e4
+
+.tags_and_count
+  display: inline-block
+
+
+.selected_tags_page
+  background-color: #EEE
+  border-bottom: 1px solid #CCC
+  border-right: 1px solid #CCC
+  color: #777
+  font-size: 11px
+  font-weight: bold
+  padding: 3px 8px
+  text-decoration: none
+  white-space: nowrap
+  float: left
+  margin-right: 5px
+  margin-bottom: 10px
+
+.selected_tags_page:hover
+  background-color: $blue
+  color: white
+
+.similar
+  border-bottom: 1px dotted #DDD
+  padding: 5px 0px 5px 0px
+  font-size: 85%
+
+.q_stats
+  color: #214263
+
+.user_karma
+  color: $blue_link
+  font-size: 130%
+
+.user_time
+  color: $blue
+
+.user_form_field
+  float: right
+  width: 200px
+
+.label
+  float: left
+  margin-top: 5px
+  font-weight: normal
+
+.user_edit
+  background: #F5F5DC
+  padding: 10px
+  margin-top: 40px
+  a
+    color: $blue_link
+
+.bio_headlines
+  color: #444
+  font-size: 20px
+  font-weight: bold
+
+.user_badge_counts
+  float: left
+  margin-left: 5px
+  margin-top: 2px
+
+.user_badges_each
+  margin: 5px 0px 5px 0px
+
+.recent_users
+  padding: 10px
+
+#display_gdl
+  padding: 10px
+  margin-top: 10px
+  color: $logo
+
+.reply_user_link a
+  color: $blue
+  text-decoration: none
+  float: left
+  margin-left: 10px
+
+.reply_text 
+  float: left
+
+
+.error
+  color: red
+  font-style: italic
+  font-size: 80%
+
+.simple_submit
+  margin: 10px 0 10px 0
+
+.please_login_link
+  a
+    color: $blue
+  margin-top: 20px
+
+.tags_result
+  margin-bottom: 20px
+
+
+.tags_result_header
+  float: left
+  padding-top: 2px
+  margin-right: 10px
+
+
+<<<<<<< HEAD
+ol
+  li
+    list-style: decimal
+    margin-left: 20px
+=======
+>>>>>>> 27030f05a1d66049283945d1af22a649a73781e4
+
+ul
+  li
+    margin-left: 20px
+    list-style: disc
+
+
+blockquote
+  margin-bottom: 10px
+  padding: 10px 10px 1px 10px
+  background-color: #eee
+
+
+
+p
+  clear: both
+  margin-bottom: 1em
+  word-wrap: break-word
+
+
+
+.form_label
+  float: left
+  width: 100px
+  padding-top: 3px
+
+#session_password,#session_name
+  width: 150px
+
+.local_account 
+  padding: 10px
+  margin-top: 30px
+
+.new_user_link
+  padding: 10px
+  a
+    color: $blue
+
+.flash
+  color: red
+  padding: 10px
+  font-size: 80%
+
+
+.create_user_form_field
+  width: 150px
+
+.form_label2
+  float: left
+  width: 205px
+  padding-top: 3px
+<<<<<<< HEAD
+
+.social_buttons
+  padding: 10px 0 0 45px
+  border: 1px solid lightgray
+  -webkit-border-radius: 10px 10px 10px 10px
+  -moz-border-radius: 10px 10px 10px 10px
+  margin-bottom: 15px
+
+
+.fb
+  float: left
+  width: 75px
+
+.tw
+  float: left
+
+.social_buttons2
+  padding: 10px 0 0 10px
+  border: 1px solid lightgray
+  -webkit-border-radius: 10px 10px 10px 10px
+  -moz-border-radius: 10px 10px 10px 10px
+  margin-top: 15px
+  margin-bottom: 15px
+
+.social_header
+  color: gray
+  padding-bottom: 5px
+
+.home_side_headers
+  color: gray
+
+.new_session_wrapper
+  margin-top: 25px
+  background: $light_beige_pastel
+  -webkit-border-radius: 10px 10px 10px 10px
+  -moz-border-radius: 10px 10px 10px 10px
+
+.form_label
+  color: gray
+
+.new_user_wrapper
+  margin-top: 25px
+  background: $light_beige_pastel
+  -webkit-border-radius: 10px 10px 10px 10px
+  -moz-border-radius: 10px 10px 10px 10px
+  padding: 10px
+  color: gray
+
+.new_question_wrapper 
+  margin-top: 25px
+  background: $light_beige_pastel
+  -webkit-border-radius: 10px 10px 10px 10px
+  -moz-border-radius: 10px 10px 10px 10px
+  padding: 10px
+  color: gray
+
+.question_header2
+  color: gray
+  font-size: 120%
+  margin-bottom: 20px
+
+.wmd-preview
+  background: white
+  color: black
+
+.test_
+
+=======
+>>>>>>> 27030f05a1d66049283945d1af22a649a73781e4

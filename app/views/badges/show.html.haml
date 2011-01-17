@@ -1,0 +1,18 @@
+.badges_index
+  <a href="/badges/#{@badge.id}"><div class="badges"><span class="badgeicon #{@badge.metal.downcase}"></span> #{@badge.badge_name}</div></a>  
+  %span.badge_desc
+    =@badge.badge_desc
+  .clear
+  <br/>
+
+.clear
+
+#{@users.size} membres ont reçu ce badge
+<br/><br/>
+.clear
+=render :partial => "badges/users" , :collection => @users, :as => :user
+
+
+    
+              
+            

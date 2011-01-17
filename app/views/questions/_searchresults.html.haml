@@ -1,0 +1,22 @@
+%div{:class => "question_home" ,:id => "question_#{searchresults.id}"}
+
+  .grid_2.alpha.counts
+    %div{:class => "status#{nb_of_answers(searchresults.solved,searchresults.answers.size)}"}
+      .item-count 
+        =searchresults.answers.size
+      %div answers
+
+
+  .grid_13.omega.question_summary_wrapper_right
+    .question_header
+      =link_to(searchresults.title , question_path(searchresults)) 
+    .question_tags
+      -searchresults.tags.each do |f|
+        <a href="/?tag=#{f.tag}"><div class="selected_tags" id="#{f.tag}">#{f.tag}</div></a>
+      
+    .userheadline
+      ="Il y a " + time_ago_in_words(searchresults.created_at)
+  .clear
+
+
+

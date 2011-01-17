@@ -1,0 +1,13 @@
+<% if @flag == "OK"%>
+$("div#questionvote_<%= @questionvote.question_id %>").empty();
+$("div#questionvote_<%= @questionvote.question_id %>").append("<%= @questionvote.votesnb  %>");
+$("div#questionvote_<%= @questionvote.question_id %>").effect("pulsate", { times:3 }, 500);
+<% elsif @flag == "not_logged_in" %>
+$("div.question_left").append("<%= escape_javascript(render(:partial => "sessions/error", :locals => {:message => "Vous devez être identifié pour voter"})) %>");  
+<% elsif @flag == "self_voting" %>
+$("div.question_left").append("<%= escape_javascript(render(:partial => "sessions/error", :locals => {:message => "Pas de autovotage"})) %>");  
+<% elsif @flag == "already_voted" %>
+$("div.question_left").append("<%= escape_javascript(render(:partial => "sessions/error", :locals => {:message => "Déja voté"})) %>");  
+<% end %>
+
+

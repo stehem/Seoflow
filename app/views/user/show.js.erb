@@ -1,0 +1,7 @@
+<% if params[:item] == "question" %>
+$('.user_questions_ajax').empty();
+$('.user_questions_ajax').append("<%= escape_javascript(render(:partial => "user/userquestions", :object => @paginated_questions)) %>");  
+<% elsif params[:item] == "answer" %>
+$('.user_answers_ajax').empty();
+$('.user_answers_ajax').append("<%= escape_javascript(render(:partial => "user/useranswers", :object => @answers2)) %>");  
+<% end %>

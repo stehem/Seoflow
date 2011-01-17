@@ -1,0 +1,6 @@
+=form_for @question , :as => :question , :url => question_path(@question.id) , :remote => true, :method => "put"  do |f|
+
+  %div
+    =f.text_area :body
+    .clear
+    =submit_tag "Modifier"

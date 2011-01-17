@@ -1,0 +1,13 @@
+Questions taggées
+.selected_tags
+  =@tag
+ausquelles a participé
+=@user.name
+
+
+.results
+  =render :partial => "questions/searchresults" , :collection => @questions
+
+
+=will_paginate @questions
+

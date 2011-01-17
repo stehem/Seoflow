@@ -1,0 +1,10 @@
+%div{:class => "reply", :id => "reply_#{reply.id}"}
+  .reply_text  
+    =reply.body
+  .reply_user_link
+    = link_to reply.user_name, user_path(reply.user)
+  .clear
+
+
+
+

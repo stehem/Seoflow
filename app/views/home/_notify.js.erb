@@ -1,0 +1,10 @@
+<%= javascript_tag do %>
+$(document).ready(function() {
+  $.notifyBar({
+    html: "<%= 'Vous avez gagné le(s) badge(s): ' + message.map {|f| f.to_s}.join(", ") %>",
+    delay: 5000,
+    animationSpeed: "normal"
+  });  
+});  
+<% end %>
+

@@ -1,0 +1,5 @@
+var selector = "#answer_" + <%= @answer.id %> + " > .grid_1.alpha";
+$(selector).append('<div class="solved"><%= image_tag("correct_small.png") %></div>');
+$(".solved").hide();
+$(".solved").fadeIn(2000);
+

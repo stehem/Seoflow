@@ -1,0 +1,23 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  login: MyString
+  identifier: MyString
+  encrypted_password: MyString
+  salt: MyString
+  password: MyString
+  sum_of_karma: 1
+  sum_of_bronze: 1
+  sum_of_silver: 1
+  sum_of_gold: 1
+
+two:
+  login: MyString
+  identifier: MyString
+  encrypted_password: MyString
+  salt: MyString
+  password: MyString
+  sum_of_karma: 1
+  sum_of_bronze: 1
+  sum_of_silver: 1
+  sum_of_gold: 1

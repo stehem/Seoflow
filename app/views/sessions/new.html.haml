@@ -1,0 +1,76 @@
+<<<<<<< HEAD
+.new_session_wrapper
+  .social_icons
+    %span{:class =>"home_side_headers"}Connectez vous avec votre compte Google, Twitter ou Facebook:<br/><br/>
+    = link_to image_tag("google-large.png"), "/auth/google" 
+    = link_to image_tag("twitter-large.png"), "/auth/twitter" 
+    = link_to image_tag("facebook-large.png"), "/auth/facebook" 
+
+
+
+  .local_account
+    %span{:class =>"home_side_headers"}Ou connectez avec votre compte local:<br/><br/>
+    = form_for @session , :url => { :action => "create", :local => "true" } do |f|
+      .form_wrapper
+        .form_label
+          = f.label 'Identifiant' 
+        .form_field
+          = f.text_field :name
+        .form_label
+          = f.label 'Mot de passe'
+        .form_field
+          = f.password_field :password 
+      = f.submit "OK", :class => "submit_button"
+
+  .flash
+    = flash[:message]
+
+  .new_user_link
+    = link_to "Créer utilisateur" , new_user_path 
+=======
+.social_icons
+  Connectez vous avec votre compte Google, Twitter ou Facebook:<br/><br/>
+  = link_to image_tag("google-large.png"), "/auth/google" 
+  = link_to image_tag("twitter-large.png"), "/auth/twitter" 
+  = link_to image_tag("facebook-large.png"), "/auth/facebook" 
+
+
+
+.local_account
+  Ou connectez avec votre compte local:<br/><br/>
+  = form_for @session , :url => { :action => "create", :local => "true" } do |f|
+    .form_wrapper
+      .form_label
+        = f.label 'Identifiant' 
+      .form_field
+        = f.text_field :name
+      .form_label
+        = f.label 'Mot de passe'
+      .form_field
+        = f.password_field :password 
+    = f.submit "OK"
+
+.flash
+  = flash[:message]
+
+.new_user_link
+  = link_to "Créer utilisateur" , new_user_path 
+>>>>>>> 27030f05a1d66049283945d1af22a649a73781e4
+
+
+
+-content_for :rightbar do 
+  .intro
+<<<<<<< HEAD
+    %span{:class =>"home_side_headers"}SEOFlow utilise les protocoles 
+    =link_to "OAuth","http://fr.wikipedia.org/wiki/OAuth"
+    %span{:class =>"home_side_headers"}et 
+    =link_to "OpenID","http://fr.wikipedia.org/wiki/OpenID" 
+    %span{:class =>"home_side_headers"}pour vous permettre de vous connecter en utilisant votre compte Google, Twitter ou Facebook.<br/> Nous n'<b>accédons pas</b> à votre compte.
+=======
+    SEOFlow utilise les protocoles 
+    =link_to "OAuth","http://fr.wikipedia.org/wiki/OAuth"
+    et 
+    =link_to "OpenID","http://fr.wikipedia.org/wiki/OpenID" 
+    pour vous permettre de vous connecter en utilisant votre compte Google, Twitter ou Facebook.<br/> Nous n'<b>accédons pas</b> à votre compte.
+>>>>>>> 27030f05a1d66049283945d1af22a649a73781e4

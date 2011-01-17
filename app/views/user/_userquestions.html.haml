@@ -1,0 +1,5 @@
+.user_questions_ajax
+  - @paginated_questions.each do |f|
+    .user_questions_links
+      = link_to f.title,question_path(f)
+  = will_paginate @paginated_questions, :class =>"ajax_pagination", :params => { :item => "question" } 

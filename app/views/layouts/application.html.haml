@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+%html
+  %head
+    %title SEOFlow
+
+    =stylesheet_link_tag("960_24")
+    =stylesheet_link_tag("jquery-ui-1.8.5.custom")
+    =stylesheet_link_tag("notifyBar")
+    =stylesheet_link_tag("reset")
+    =stylesheet_link_tag("styles")
+    =stylesheet_link_tag("tipTip")
+    =javascript_include_tag  "jquery-1.4.4.min.js"
+    =javascript_include_tag  "jquery-ui-1.8.5.custom.min.js" 
+    =javascript_include_tag "rails.js" 
+    =javascript_include_tag "application.js" 
+    =javascript_include_tag "typewatch.js" 
+    =javascript_include_tag "jquery.validate.min.js" 
+    =javascript_include_tag "notifyBar.js" 
+    =javascript_include_tag "jquery.tipTip.minified.js"
+    =csrf_meta_tag
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Sans">
+
+  %body
+    .topline
+      .container_24
+        .grid_24.topright
+          -if @current_user_login
+            Identifié en tant que 
+            =link_to @current_user_login, user_path(session[:id])
+            =link_to "Se déconnecter" , session_path , :method => :delete
+          -else
+            =link_to "Login" , new_session_path 
+          =flash[:message]
+      .clear
+
+    .container_24
+      .grid_18
+        .grid_6.alpha
+          .logo
+            =link_to image_tag("logo.png"),root_url
+        .grid_12.omega
+          %ul.formats 
+            %li
+              =link_to "Questions" , root_url
+              =link_to "Tags" , tags_path 
+              =link_to "Badges" , badges_path 
+              =link_to "Membres" , :controller => "user", :action => "index" 
+      .grid_6
+        %ul.formats
+          %li
+            =link_to "Poser une question" , new_question_path 
+      .clear
+
+
+    .container_24.main
+      .grid_24
+        .grid_18.alpha.mainleft
+          =yield
+        .grid_6.omega.rightbar
+          .global_search
+            =form_tag questions_path, :method => 'get' do 
+              = text_field_tag :search, params[:search] 
+            .clear
+          =yield :rightbar 
+      .clear
+
+
+
+
+
+    -if !session[:id] && !session[:first]
+      =render :partial => "home/notify2.js.erb", :locals => {:message => "Bienvenue sur SEO Flow"}
+      -session[:first] = true 
+    
+    #spinner
+      = image_tag "ajax-loader.gif"
+
+    .clear
+    .bottomline
+      footer shmooter
+
+
+

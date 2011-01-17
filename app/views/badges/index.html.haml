@@ -1,0 +1,19 @@
+.badges_index
+  -@badges.each do |f|
+    <a href="/badges/#{f.id}"><div class="badges"><span class="badgeicon #{f.metal.downcase}"></span> #{f.badge_name}</div></a>  
+    %span.badge_desc
+      =f.badge_desc
+    .clear
+    <br/>
+
+
+-content_for :rightbar do
+  .intro
+<<<<<<< HEAD
+    %span{:class =>"home_side_headers"}Il existe plusieurs manières de gagner des badges en participant sur le site.<br/> Le moyen principal est de recevoir des votes positifs sur vos réponses et vos questions.<br/> Les badges sont classés en trois métaux selon la degré de difficulté.
+=======
+    Il existe plusieurs manières de gagner des badges en participant sur le site.<br/> Le moyen principal est de recevoir des votes positifs sur vos réponses et vos questions.<br/> Les badges sont classés en trois métaux selon la degré de difficulté.
+>>>>>>> 27030f05a1d66049283945d1af22a649a73781e4
+    
+              
+            

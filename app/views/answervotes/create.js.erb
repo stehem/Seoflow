@@ -1,0 +1,6 @@
+$("div#answervote_<%= @answervote.answer_id %>").empty();
+$("div#answervote_<%= @answervote.answer_id %>").append("<%= @answervote.votesnb  %>");
+$("div#answervote_<%= @answervote.answer_id %>").effect("pulsate", { times:3 }, 500);
+
+
+

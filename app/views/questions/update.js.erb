@@ -1,0 +1,13 @@
+var selector = ".question_body";
+$(selector).empty();
+$(selector).hide();
+$(selector).append("<%= escape_javascript(raw @question.body) %>");  
+$(selector).fadeIn(1000);
+
+<% if @badge %>
+  $.notifyBar({
+    html: "<%= 'Vous avez gagné le badge ' + @badge  %>",
+    delay: 2000,
+    animationSpeed: "normal"
+  });  
+<% end %>

@@ -1,0 +1,29 @@
+%div{:class => "question_home" ,:id => "question_#{questionheadline.id}"}
+
+  .grid_5.alpha.counts
+    .votes
+      .item-count
+        =questionheadline.sum_of_votes
+      %div votes
+    %div{:class => "status#{nb_of_answers(questionheadline.solved,questionheadline.answers.size)}"}
+      .item-count 
+        =questionheadline.answers.size
+      %div réponses
+    .views
+      .item-count
+        =questionheadline.views
+      %div vues
+
+  .grid_13.omega.question_summary_wrapper_right
+    .question_header
+      =link_to(questionheadline.title , question_path(questionheadline)) 
+    .question_tags
+      -questionheadline.tags.each do |f|
+        <a href="/?tag=#{f.tag}"><div class="selected_tags" id="#{f.tag}">#{f.tag}</div></a>
+      
+    .userheadline
+      ="Il y a " + time_ago_in_words(questionheadline.created_at)
+  .clear
+
+
+

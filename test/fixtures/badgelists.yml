@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  badge_name: MyString
+  badge_desc: MyText
+  metal: MyString
+
+two:
+  badge_name: MyString
+  badge_desc: MyText
+  metal: MyString

@@ -1,0 +1,11 @@
+var selector = "#answer_" + <%= @answer.id %>;
+$(selector).fadeOut(1000);
+
+
+<% if @badge %>
+  $.notifyBar({
+    html: "<%= 'Vous avez gagné le badge ' + @badge  %>",
+    delay: 2000,
+    animationSpeed: "normal"
+  });  
+<% end %>

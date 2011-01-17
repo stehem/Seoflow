@@ -1,0 +1,5 @@
+$('.users_index').hide(0);
+$('.users_index').empty();
+$(".users_index").append("<%= escape_javascript(render :partial => "user/users2" , :collection => @users, :as => :user) %>"); 
+$('.users_index').fadeIn(1000);
+

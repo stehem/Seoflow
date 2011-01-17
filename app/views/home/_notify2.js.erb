@@ -1,0 +1,10 @@
+<%= javascript_tag do %>
+$(document).ready(function() {
+  $.notifyBar({
+    html: "<%= message %>",
+    delay: 5000,
+    animationSpeed: "normal"
+  });  
+});  
+<% end %>
+

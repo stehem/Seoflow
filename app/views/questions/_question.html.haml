@@ -1,0 +1,117 @@
+.question
+
+
+  .question_title
+    =raw @question.title
+
+
+  .grid_1.alpha.question_left
+    =link_to "", 
+     votes_path(:question_id => @question.id, 
+     :item => "question", 
+     :pos => "true"),
+     :remote => "true",
+     :method => "post",
+     :class => "vote_up",
+     :title => "Cette contribution est intéressante"
+
+    %div{:class => "question_votes_score", :id => "questionvote_#{@question.id}",:title => "Somme de votes reçus"}
+      = @question.sum_of_votes
+      
+    =link_to "",
+     votes_path(:question_id => @question.id, 
+     :item => "question", 
+     :neg => "true"),
+     :remote => "true",
+     :method => "post",
+     :class => "vote_down",
+     :title => "Cette contribution n'est pas intéressante"
+
+    - if fav
+      =link_to "", favorites_path(:question_id => @question.id),
+       :remote => "true",
+       :method => "post",
+       :class => "favorite-on",
+       :title => "Retirer cette question de ses favoris"
+    - else
+      =link_to "", favorites_path(:question_id => @question.id),
+       :remote => "true",
+       :method => "post",
+       :class => "favorite",
+       :title => "Ajouter cette question à mes favoris"
+
+  .grid_17.omega.question_right
+    .question_body
+      =raw @question.body 
+      - if session[:id] == @question.user.id
+        .clear
+        = link_to "Modifier", edit_question_path(@question), :remote => true, :class => 'modify_link'
+    .grid_4.push_13.stats_wrapper
+      =render :partial => "answers/userstats2", :object => @question, :as => :item
+
+
+  .clear
+
+<<<<<<< HEAD
+
+
+
+=======
+>>>>>>> 27030f05a1d66049283945d1af22a649a73781e4
+.answer_count
+  ="#{@question.answers.size} réponses."
+
+
+
+-content_for :rightbar do 
+<<<<<<< HEAD
+  = render :partial => "layouts/social2", :object => @question
+  .user_tags
+    %span{:class =>"home_side_headers"}Tags
+=======
+  .user_tags
+    Tags
+>>>>>>> 27030f05a1d66049283945d1af22a649a73781e4
+    <br/> <br/>
+    - @question.tags.each do |f|
+      %div
+        <a href="/?tag=#{f.tag}">
+        %div{:class => "selected_tags", :id => "#{f.tag}"}
+          =f.tag
+        </a>
+        <br/>
+  .intro.q_stats
+    <br/>
+<<<<<<< HEAD
+    %span{:class =>"home_side_headers"}Question posée:
+    = "Il y a " + time_ago_in_words(@question.created_at)
+    <br/><br/>
+    %span{:class =>"home_side_headers"}Nombre de vues: 
+    = @question.views
+    <br/><br/>
+    %span{:class =>"home_side_headers"}Dernière activité:
+=======
+    Question posée:
+    = "Il y a " + time_ago_in_words(@question.created_at)
+    <br/><br/>
+    Nombre de vues: 
+    = @question.views
+    <br/><br/>
+    Dernière activité:
+>>>>>>> 27030f05a1d66049283945d1af22a649a73781e4
+    -if @question.answers.blank?
+      = "Il y a " + time_ago_in_words(@question.created_at) 
+    -else
+      = "Il y a " + time_ago_in_words(@question.answers.last.created_at) 
+  .similars
+<<<<<<< HEAD
+    %span{:class =>"home_side_headers"}Questions similaires:<br/>
+=======
+    Questions similaires:<br/>
+>>>>>>> 27030f05a1d66049283945d1af22a649a73781e4
+    -similars.each do |f|
+      - unless f.question.blank?
+        - unless @question.id == f.question.id
+          .similar
+            = link_to f.question.title, question_path(f.question)
+       

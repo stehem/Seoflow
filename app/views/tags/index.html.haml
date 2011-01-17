@@ -1,0 +1,29 @@
+.tags_page 
+  <br/><br/><br/>
+  %div
+    Rechercher un tag:
+    %input#tags_search
+
+  #tags_index
+    -@tags.each do |tag,count|
+      .tags_and_count
+        <a href="/?tag=#{tag}">
+        %div{:class => "selected_tags_page", :id => "#{tag}"}
+          =tag
+        </a>
+        .tags_count_value
+          =count
+  =will_paginate @tags
+
+
+  -content_for :rightbar do
+    .intro
+<<<<<<< HEAD
+      %span{:class =>"home_side_headers"}Chaque question est taggée, vous pouvez rechercher un tag en le tapant dans la boîte de recherche.
+=======
+      Chaque question est taggée, vous pouvez rechercher un tag en le tapant dans la boîte de recherche.
+>>>>>>> 27030f05a1d66049283945d1af22a649a73781e4
+    
+
+
+

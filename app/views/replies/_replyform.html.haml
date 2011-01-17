@@ -1,0 +1,14 @@
+=form_for @reply, :as => :reply, :url => replies_path, :remote => true do |f| 
+  %div
+    Commentaire:
+  %div
+    =f.text_area :body, :class => "reply_body"
+  =hidden_field_tag "answer_id", "" 
+  %div  
+    =submit_tag "OK" , :class => "simple_submit"
+    
+.clear
+
+
+
+

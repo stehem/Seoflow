@@ -1,0 +1,39 @@
+<%= raw RPXNow.embed_code('sixsoon', 'http://0.0.0.0:3000/session/rpx_token' , :language=>'fr')%>	
+
+
+
+<% if @session.errors.any? %>
+<div class="row">
+<div class="column grid_12 header">
+  <% @session.errors.full_messages.each do |msg| %>  
+    <li><%= msg %></li>  
+  <% end %>
+</div>
+</div>
+<% end %>
+
+
+
+<%= form_for @session , :url => { :action => "create" } do |f| %>
+
+
+	<fieldset>
+     
+        <%= f.label 'Login' %><br/>
+        <%= f.text_field :login %><br/>
+   
+        <%= f.label 'Mot de passe' %><br/>
+        <%= f.password_field :password %><br/><br/>
+
+
+
+<input class="green_button big_button" id="session_submit" name="commit" type="submit" value="S'identifier" />
+
+
+    <% end %>
+
+	</fieldset>
+
+<%= link_to "Créer utilisateur" , new_user_path %>
+
+

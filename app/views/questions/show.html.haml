@@ -1,0 +1,21 @@
+=render :partial => "questions/question", :locals => {:fav => @fav, :similars => @similars}
+
+
+.answers
+  =render :partial => "answers/answer" , :collection => @question.answers.sort_by {|a| [-a.solved, -a.sum_of_votes, +a.created_at.to_i] }
+
+-if session[:id]
+  =render :partial => "answers/answerform" , :locals => {:question_id => @question.id}
+
+-if session[:id]
+  %div{:class => "grid_15 push_3 alpha reply_box_hidden", :id => "reply_box"}
+    =render :partial => "replies/replyform"
+-else
+  .please_login_link
+    =link_to "Identifiez vous", new_session_path
+    pour répondre à cette question.
+
+
+
+
+

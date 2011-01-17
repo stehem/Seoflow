@@ -1,0 +1,23 @@
+.user_stats
+  .user_stats_left
+    = image_tag avatar_url(user)
+  .user_stats_right
+    .user_stats_right_top
+      = link_to user.name, user_path(user)
+    .user_stats_right_bottom
+      .karma{:title => "Nombre de points de réputation."}        
+        = user.sum_of_karma
+      .medals{:title => "Nombre de badges or, argent et bronze gagnés"}     
+        - unless user.sum_of_gold == 0
+          = user.sum_of_gold
+          .badgeicon.gold
+        - unless user.sum_of_silver == 0
+          = user.sum_of_silver
+          .badgeicon.silver
+        - unless user.sum_of_bronze == 0
+          = user.sum_of_bronze
+          .badgeicon.bronze
+  .clear
+
+
+

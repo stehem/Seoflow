@@ -1,0 +1,5 @@
+.user_answers_ajax
+  - @answers2.each do |f|
+    .user_questions_links
+      = link_to truncate(strip_tags(f.body), :length => 140, :separator => ' '), question_path(f.question)
+  = will_paginate @answers2, :class =>"ajax_pagination", :params => { :item => "answer" } 

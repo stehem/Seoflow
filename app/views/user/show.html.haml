@@ -1,0 +1,108 @@
+#user_page
+
+  .question_title
+    = @user.name
+
+  .user_details_wrapper
+    .grid_8.alpha.user_details_wrapper_left
+      = image_tag avatar_url(@user,1)
+      <br/>
+      - if session[:id] == @user.id
+        =link_to "Modifier mon avatar", edit_user_path(@user.id)
+      <br/>
+      %span.user_karma
+        = @user.sum_of_karma
+      points de réputation.<br/>
+      Membre depuis:
+      %span.user_time
+        = time_ago_in_words(@user.created_at)
+      <br/>Dernière activité: 
+      %span.user_time
+        - unless @answers.blank?
+          = "il y a "+time_ago_in_words(@answers.last.created_at)
+      <br/>Profil consulté:
+      %span.user_time
+        = @user.views
+      fois.
+
+    .grid_9.omega.user_details_wrapper_right
+      Nom réel:
+      %span.user_time
+        = raw @user.realname
+      <br/>
+      Site web:
+      %span.user_time
+        - unless @user.website.blank?
+          = link_to @user.website,@user.website, :rel => "nofollow"
+      <br/>
+      Age:
+      %span.user_time
+        = @user.age
+      <br/>
+      Ville:
+      %span.user_time
+        = @user.ville
+      - if session[:id] == @user.id
+        <br/><br/>
+        %span.bio_modif
+          =link_to "Modifier", edit_user_path(@user.id)
+    .clear
+
+
+  .user_questions
+    .bio_headlines
+      = @questions_total
+      questions posées.
+    = render :partial => "user/userquestions", :object => @paginated_questions
+
+
+  .user_answers
+    .bio_headlines
+      = @answers.size
+      réponses.
+    = render :partial => "user/useranswers", :object => @answers2
+    
+
+  .user_votes
+    .bio_headlines
+      Votes
+    .bio_votes_wrapper
+      .bio_votes
+        = image_tag("vote-arrow-up-on.png") 
+      .bio_votes_count
+        = @vote_counts[1]
+      .bio_votes
+        = image_tag("vote-arrow-down-on.png") 
+      .bio_votes_count
+        = @vote_counts[-1]
+    .clear
+
+  .user_page_tags
+    .bio_headlines
+      Tags
+    .bio_tags
+      - @tags_counts.each do |tag,count|
+        .tags_wrapper
+          <a href="/search/#{@user.id}?tag=#{tag}"><div class="selected_tags_page" id="#{tag}">#{tag}</div></a>
+          .tags_count_value
+            = count
+    .clear
+
+
+  .user_badges
+    .bio_headlines
+      Badges<br/>
+      -@b.each do |f|
+        .user_badges_each
+          <a href="/badges/#{f.id}"><div class="badges"><span class="badgeicon #{f.metal.downcase}"></span> #{f.badge_name}</div></a>  
+          -@a.each_pair do |key,value|
+            -if key == f.id
+              .user_badge_counts
+                = value.to_s
+        .clear
+
+
+
+
+
+
