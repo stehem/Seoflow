@@ -1,55 +1,52 @@
-.header
-  Poster une question:
+.new_question_wrapper
+  .new_question_hdr
+    %span{:class =>"home_side_headers"}Poster une question:
+
+  =form_for @question do |f|
+    %div
+      %span{:class =>"home_side_headers"}Titre:
+    %div
+      =f.text_field :title, :class => "question_form_field"
+    <br/>
+    %div
+      %span{:class =>"home_side_headers"}Tags:
+    .tags
+
+    %input{:id => "tags_box", :class => "question_form_field", :name => "tags[box]"}
+      <a href="#" id="add_link">Ajouter</a>
+      <input type="hidden" id="question_tag1" name="tag1" value="" />
+      <input type="hidden" id="question_tag2" name="tag2" value="" />
+      <input type="hidden" id="question_tag3" name="tag3" value="" />
 
 
+    .reset_tags
+      <a href="#" class="reset_tags">Reset</a>
 
+    <br/>
 
+    %div
+      %span{:class =>"home_side_headers"}Question:
+    %div
+      =f.text_area :body, :class => "question_form_field"
 
-=form_for @question do |f|
-  %div
-    Titre:
-  %div
-    =f.text_field :title, :class => "question_form_field"
-  <br/>
-  %div
-    Tags:
-  .tags
+    %div
+      %span{:class =>"home_side_headers"}Prévisualiser:
 
-  %input{:id => "tags_box", :class => "question_form_field", :name => "tags[box]"}
-    <a href="#" id="add_link">Ajouter</a>
-    <input type="hidden" id="question_tag1" name="tag1" value="" />
-    <input type="hidden" id="question_tag2" name="tag2" value="" />
-    <input type="hidden" id="question_tag3" name="tag3" value="" />
-
-
-  .reset_tags
-    <a href="#" class="reset_tags">Reset</a>
-
-  <br/>
-
-  %div
-    Question:
-  %div
-    =f.text_area :body, :class => "question_form_field", :class => "mceEditor"
+    %div{:class => "wmd-preview", :id => "preview_question"}
 
  
-  %div{:id => "question_submit"}
-    =submit_tag "OK", :class => "submit_button"
+    %div{:id => "question_submit"}
+      =submit_tag "Valider", :class => "custom_submit_bttn"
 
 
 -content_for :rightbar do
   = render "rightbar"
 
-<!-- TinyMCE -->
-<script type="text/javascript" src="/javascripts/tinymce/jscripts/tiny_mce/tiny_mce.js"></script>
 <script type="text/javascript">
-tinyMCE.init({
-mode : "textareas",
-theme : "advanced",
-theme_advanced_buttons1 : "bold,italic,link,unlink,bullist,blockquote,undo", 
-theme_advanced_buttons2 : "", 
-theme_advanced_buttons3 : "" 
-});
+wmd_options = {
+buttons: "bold italic | link blockquote | ol ul",
+};
 </script>
-<!-- /TinyMCE -->
+%script{:type => "text/javascript", :src => "/javascripts/wmd-1.0.1/wmd/wmd.js"}
+
 

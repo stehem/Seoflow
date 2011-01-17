@@ -44,11 +44,12 @@ end
 def update
   @user = User.find(params[:id])
   if session[:id] == @user.id
-    attrib = [:realname, :website, :ville, :age, :email]
+    attrib = [:realname, :website, :ville, :age, :email, :bio]
     attrib.each do |f|
       @user[f] = Sanitize.clean(params[:user][f], Sanitize::Config::RESTRICTED)
     end
-    @user.update_attributes(attrib)
+    @user.upd = "true"
+    @user.update_attributes!(attrib)
     redirect_to @user
   end
 end

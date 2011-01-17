@@ -1,30 +1,32 @@
-.social_icons
-  Connectez vous avec votre compte Google, Twitter ou Facebook:<br/><br/>
-  = link_to image_tag("google-large.png"), "/auth/google" 
-  = link_to image_tag("twitter-large.png"), "/auth/twitter" 
-  = link_to image_tag("facebook-large.png"), "/auth/facebook" 
+.session_new_wrapper
+
+  .social_icons
+    Connectez vous avec votre compte Google, Twitter ou Facebook:<br/><br/>
+    = link_to image_tag("google-large.png"), "/auth/google" 
+    = link_to image_tag("twitter-large.png"), "/auth/twitter" 
+    = link_to image_tag("facebook-large.png"), "/auth/facebook" 
 
 
 
-.local_account
-  Ou connectez avec votre compte local:<br/><br/>
-  = form_for @session , :url => { :action => "create", :local => "true" } do |f|
-    .form_wrapper
-      .form_label
-        = f.label 'Identifiant' 
-      .form_field
-        = f.text_field :name
-      .form_label
-        = f.label 'Mot de passe'
-      .form_field
-        = f.password_field :password 
-    = f.submit "OK"
+  .local_account
+    Ou connectez avec votre compte local:<br/><br/>
+    = form_for @session , :url => { :action => "create", :local => "true" } do |f|
+      .form_wrapper
+        .form_label
+          = f.label 'Identifiant' 
+        .form_field
+          = f.text_field :name
+        .form_label
+          = f.label 'Mot de passe'
+        .form_field
+          = f.password_field :password 
+      = f.submit "OK", :class => "custom_submit_bttn"
 
-.flash
-  = flash[:message]
+  .flash
+    = flash[:message]
 
-.new_user_link
-  = link_to "Créer utilisateur" , new_user_path 
+  .new_user_link
+    = link_to "Créer utilisateur" , new_user_path 
 
 
 

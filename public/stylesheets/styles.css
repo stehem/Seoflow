@@ -65,18 +65,6 @@ body {
     text-decoration: none;
     background: #214263; }
 
-.submit_button {
-  background: #214263;
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  padding: 5px 5px;
-  margin-top: 10px; }
-
-.submit_button:hover {
-  border: 2px solid #fffafa; }
-
 #logo {
   padding-top: 3px; }
 
@@ -885,13 +873,6 @@ body {
   margin-top: 5px;
   font-weight: normal; }
 
-.user_edit {
-  background: #f5f5dc;
-  padding: 10px;
-  margin-top: 40px; }
-  .user_edit a {
-    color: #214263; }
-
 .bio_headlines {
   color: #444444;
   font-size: 20px;
@@ -942,6 +923,10 @@ body {
   float: left;
   padding-top: 2px;
   margin-right: 10px; }
+
+ol li {
+  margin-left: 20px;
+  list-style: decimal; }
 
 ul li {
   margin-left: 20px;
@@ -1015,3 +1000,63 @@ p {
 
 .home_side_headers {
   color: gray; }
+
+.session_new_wrapper {
+  background: #f5f5dc;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  margin-top: 25px; }
+
+.new_user_wrapper {
+  background: #f5f5dc;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  margin-top: 25px;
+  padding: 10px; }
+
+.new_question_wrapper {
+  background: #f5f5dc;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  margin-top: 25px;
+  padding: 10px; }
+
+.badges_show_wrapper {
+  background: #f5f5dc;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  margin-top: 25px;
+  padding: 10px; }
+
+.user_edit {
+  background: #f5f5dc;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  margin-top: 25px;
+  padding: 10px; }
+  .user_edit a {
+    color: #214263; }
+
+.new_question_hdr {
+  font-size: 130%;
+  margin-bottom: 20px; }
+
+.custom_submit_bttn {
+  background: gray;
+  color: white;
+  border: 1px solid gray;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  padding: 5px 5px;
+  margin-top: 10px; }
+
+.custom_submit_bttn:hover {
+  border: 1px solid #fffafa; }
+
+.user_form_field_bio {
+  height: 100px;
+  width: 200px;
+  float: right; }
+
+#error_container {
+  padding: 10px 0 10px 0; }

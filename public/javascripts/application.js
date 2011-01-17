@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+
 $("input#tags_box").autocomplete({
 source: "/autocomplete",
 minLength:3, 
@@ -13,6 +14,7 @@ return false;
 }
 });
 
+
 $("a.reset_tags").click(function () {
 $("div[class='selected_tags']").remove();
 $("input#question_tag1").val("");
@@ -21,6 +23,7 @@ $("input#question_tag3").val("");
 $('#tags_box').show('slow');
 $("a#add_link").show('slow');
 });
+
 
 $("a#add_link").click(function () {
 if ($('input#tags_box').val() != "") {
@@ -76,6 +79,7 @@ $('#display_gdl').append($(f).clone());
 $('#display_gdl').fadeIn(1000);
 }
 
+
 $("input#tags_search").typeWatch({callback:finished,wait:750,highlight:true,captureLength:-1});
 
 function finished(txt) {
@@ -107,42 +111,12 @@ ev.stopPropagation();
 });
 
 
-$("#reply_new").validate({
-rules: {
-"reply[body]": {required: true}
-},
-messages: {
-"reply[body]": "",  
-},
-highlight: function(element, errorClass) {
-$(element).addClass("answer_form_validate");
-}
-});
-
-
-
-
-$("#answer_new").submit(function() {
-tinyMCE.triggerSave();
-});
-
-
-
-$("#answer_new").validate({
-rules: {
-"answer[body]": {required: true}
-},
-messages: {
-"answer[body]": "Le champ ne peut pas être vide.",  
-}
-});
-
-
 $(".error_notification").live('click', function() {
 $(this).fadeOut("slow", function() {
 $(this).remove();
 });
 });
+
 
 $('#spinner').hide() 
 .ajaxStart(function() {
@@ -164,14 +138,35 @@ $(".answer_votes_score").tipTip({defaultPosition: "right"});
 $(".solved_link").tipTip({defaultPosition: "right"});
 $(".reply_link").tipTip({defaultPosition: "right"});
 
+
 $('.ajax_pagination a').live("click", function () {
 $.get(this.href, null, null, 'script');
 return false;
 });
 
 
-$("#new_question").submit(function() {
-tinyMCE.triggerSave();
+/////////////////////////////////// Form Validations
+$("#reply_new").validate({
+rules: {
+"reply[body]": {required: true}
+},
+messages: {
+"reply[body]": "",  
+},
+highlight: function(element, errorClass) {
+$(element).addClass("answer_form_validate");
+}
+});
+
+
+$("#answer_new").validate({
+errorElement: "div",
+rules: {
+"answer[body]": {required: true}
+},
+messages: {
+"answer[body]": "Le champ ne peut pas être vide.",  
+}
 });
 
 
@@ -220,6 +215,22 @@ rules: {
 messages: {
 "session[name]": {required: "Le champ ne peut pas être vide."},  
 "session[password]": {required: "Le champ ne peut pas être vide."},
+}
+});
+
+
+$("#user_edit").validate({
+errorLabelContainer: "#error_container",
+wrapper: "div",
+rules: {
+"user[email]": {email: true},
+"user[website]": {url: true},
+"user[bio]": {maxlength: 200}
+},
+messages: {
+"user[email]": {email: "Email non valide."},  
+"user[website]": {url: "URL non valide."},
+"user[bio]": {maxlength: "Bio: 200 caractères maxi."}
 }
 });
 

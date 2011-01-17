@@ -1,32 +1,41 @@
 .user_edit
-  Pour modifier votre avatar vous devez aller sur 
+  %span{:class =>"home_side_headers"}Pour modifier votre avatar vous devez aller sur 
   =link_to "http://en.gravatar.com/","http://en.gravatar.com/"
-  et associer une image à votre adresse email. Ensuite il vous suffit d'ajouter votre adresse email à votre profil ci dessous pour que votre avatar soit modifié.
+  %span{:class =>"home_side_headers"}et associer une image à votre adresse email. Ensuite il vous suffit d'ajouter votre adresse email à votre profil ci dessous pour que votre avatar soit modifié.
+  #error_container
   = form_for @user , :as => :user , :url => user_path(@user.id), :method => "put"  do |f|
     .grid_8
       .label
-        Email: 
+        %span{:class =>"home_side_headers"}Email: 
       = f.text_field :email, :class => "user_form_field"
     .clear
     .grid_8
       .label
-        Nom réel:
+        %span{:class =>"home_side_headers"}Nom réel:
       = f.text_field :realname, :class => "user_form_field"
     .clear
     .grid_8
       .label
-        Site web:
+        %span{:class =>"home_side_headers"}Site web:
       = f.text_field :website, :class => "user_form_field"
     .clear
     .grid_8
       .label
-        Age:
+        %span{:class =>"home_side_headers"}Age:
       = f.text_field :age, :class => "user_form_field"
     .clear
     .grid_8
       .label
-        Ville:
+        %span{:class =>"home_side_headers"}Ville:
       = f.text_field :ville, :class => "user_form_field"
     .clear
+    .grid_8
+      .label
+        %span{:class =>"home_side_headers"}Bio:
+      = f.text_area :bio, :class => "user_form_field_bio"
+    .clear
     <br/><br/>
-    =submit_tag "Sauvegarder"
+    =submit_tag "Valider", :class => "custom_submit_bttn"
+
+
+

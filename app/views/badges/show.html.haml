@@ -4,13 +4,11 @@
     =@badge.badge_desc
   .clear
   <br/>
+  #{@users.size} membres ont reçu ce badge
+  <br/><br/>
+  =render :partial => "badges/users" , :collection => @users, :as => :user
+  .clear
 
-.clear
-
-#{@users.size} membres ont reçu ce badge
-<br/><br/>
-.clear
-=render :partial => "badges/users" , :collection => @users, :as => :user
 
 
     

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110110182301) do
+ActiveRecord::Schema.define(:version => 20110117191124) do
 
   create_table "answers", :force => true do |t|
     t.text     "body"
@@ -110,6 +110,7 @@ ActiveRecord::Schema.define(:version => 20110110182301) do
     t.string   "age"
     t.string   "ville"
     t.integer  "views",              :default => 0
+    t.text     "bio"
   end
 
   create_table "votes", :force => true do |t|

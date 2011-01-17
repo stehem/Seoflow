@@ -42,6 +42,10 @@
       Ville:
       %span.user_time
         = @user.ville
+      <br/>
+      Bio:
+      %span.user_time
+        = @user.bio
       - if session[:id] == @user.id
         <br/><br/>
         %span.bio_modif
