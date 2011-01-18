@@ -8,6 +8,7 @@ delay: 250,
 select: function(event, ui) {    
 $('.tags').append('<div class="selected_tags" id="'+ui.item.value+'">'  + (ui.item.value) + '</div>');
 populate_id_attr(ui.item.value);
+$('.error:contains("Vous devez ajouter au moins un tag.")').remove();
 $('input#tags_box').val("");
 check_number_of_selected_tags();
 return false;
@@ -15,11 +16,19 @@ return false;
 });
 
 
-$("a.reset_tags").click(function () {
-$("div[class='selected_tags']").remove();
+function clear_hidden_tag_values (){
 $("input#question_tag1").val("");
 $("input#question_tag2").val("");
 $("input#question_tag3").val("");
+};
+
+
+clear_hidden_tag_values ();
+
+
+$("a.reset_tags").click(function () {
+$("div[class='selected_tags']").remove();
+clear_hidden_tag_values ();
 $('#tags_box').show('slow');
 $("a#add_link").show('slow');
 });
@@ -29,6 +38,7 @@ $("a#add_link").click(function () {
 if ($('input#tags_box').val() != "") {
 $('.tags').append('<div class="selected_tags" id="' + $('input#tags_box').val() +'">'  + $('input#tags_box').val() + '</div>');
 populate_id_attr($('input#tags_box').val());
+$('.error:contains("Vous devez ajouter au moins un tag.")').remove();
 $('input#tags_box').val("");
 $('input#tags_box').focus();
 check_number_of_selected_tags();
@@ -168,6 +178,22 @@ messages: {
 "answer[body]": "Le champ ne peut pas être vide.",  
 }
 });
+
+
+
+for(var name in CKEDITOR.instances) {
+CKEDITOR.instances[name].on("instanceReady", function() {
+// Set keyup event          
+this.document.on("keyup", updateValue);
+// Set paste event
+this.document.on("paste", updateValue);     
+}); 
+
+function updateValue() {
+CKEDITOR.instances[name].updateElement(); 
+$('textarea').trigger('keyup');
+}
+}
 
 
 $("#new_question").validate({

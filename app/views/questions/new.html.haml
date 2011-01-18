@@ -29,11 +29,6 @@
     %div
       =f.text_area :body, :class => "question_form_field"
 
-    %div
-      %span{:class =>"home_side_headers"}Prévisualiser:
-
-    %div{:class => "wmd-preview", :id => "preview_question"}
-
  
     %div{:id => "question_submit"}
       =submit_tag "Valider", :class => "custom_submit_bttn"
@@ -42,11 +37,18 @@
 -content_for :rightbar do
   = render "rightbar"
 
+
+
 <script type="text/javascript">
-wmd_options = {
-buttons: "bold italic | link blockquote | ol ul",
-};
+CKEDITOR.replace( 'question[body]',
+{
+toolbar : 'Basic',
+uiColor : '#F5F5DC',
+height:"200", width:"600" 
+});
 </script>
-%script{:type => "text/javascript", :src => "/javascripts/wmd-1.0.1/wmd/wmd.js"}
+
+
+
 
 

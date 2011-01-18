@@ -15,11 +15,6 @@
     %div
       =f.text_area :body
 
-    %div
-    Prévisualiser:
-
-    %div{:class => "wmd-preview", :id => "preview_question"}
-
 
 
 
@@ -36,8 +31,10 @@
 
 
 <script type="text/javascript">
-wmd_options = {
-buttons: "bold italic | link blockquote | ol ul",
-};
+CKEDITOR.replace( 'answer[body]',
+{
+toolbar : 'Basic',
+uiColor : '#F5F5DC',
+height:"150", width:"600" 
+});
 </script>
-%script{:type => "text/javascript", :src => "/javascripts/wmd-1.0.1/wmd/wmd.js"}

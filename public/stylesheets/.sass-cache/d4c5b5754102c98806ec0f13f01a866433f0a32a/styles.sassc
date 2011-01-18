@@ -1,6 +1,6 @@
 3.0.9 (Classy Cassidy)
-74c1d3476b5f4147c398e65c4f6cf18c54706c41
-o:Sass::Tree::RootNode	:@template"qB$orange: #FF6600
+544d52a20d8b4cd4a78ceea4cc65fd5e12db15c4
+o:Sass::Tree::RootNode	:@template"sB$orange: #FF6600
 $blue: #214263
 $rightbar: #FFF8DC
 $body: #FFFAFA
@@ -1147,6 +1147,8 @@ p
 
 #error_container
   padding: 10px 0 10px 0
+
+
 :@options{:css_filename"styles.css:
 style:nested:line_comments0:cache_location"./.sass-cache:always_updateF:property_syntax0:load_paths[".:
 cacheT:always_checkT:full_exceptionT:syntax:	sass:filename"styles.sass:css_location"./public/stylesheets:template_location[ :@has_childrenT:@children[Ìo:Sass::Tree::VariableNode:
