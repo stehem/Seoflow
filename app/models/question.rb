@@ -23,7 +23,7 @@ end
 def cleaner
  self.title = Sanitize.clean(self.title, Sanitize::Config::RESTRICTED)
  self.body = Sanitize.clean(self.body,
-    :elements => ['a', 'strong','em','p','ul','li','blockquote'],
+    :elements => ['a', 'strong','em','p','ul','ol','li','blockquote'],
     :attributes => {'a' => ['href']},
     :protocols => {'a' => {'href' => ['http']}},
     :add_attributes => {'a' => {'rel' => 'nofollow'}})

@@ -155,6 +155,12 @@ return false;
 });
 
 
+if ($.browser.msie) {
+$('ul.formats').removeClass("formats").addClass("formats_ie");
+}
+
+
+
 /////////////////////////////////// Form Validations
 $("#reply_new").validate({
 rules: {
@@ -178,22 +184,6 @@ messages: {
 "answer[body]": "Le champ ne peut pas être vide.",  
 }
 });
-
-
-
-for(var name in CKEDITOR.instances) {
-CKEDITOR.instances[name].on("instanceReady", function() {
-// Set keyup event          
-this.document.on("keyup", updateValue);
-// Set paste event
-this.document.on("paste", updateValue);     
-}); 
-
-function updateValue() {
-CKEDITOR.instances[name].updateElement(); 
-$('textarea').trigger('keyup');
-}
-}
 
 
 $("#new_question").validate({

@@ -48,7 +48,18 @@ height:"200", width:"600"
 });
 </script>
 
+<script type="text/javascript">
+for(var name in CKEDITOR.instances) {
+CKEDITOR.instances[name].on("instanceReady", function() {
+this.document.on("keyup", updateValue);
+this.document.on("paste", updateValue);     
+}); 
 
-
+function updateValue() {
+CKEDITOR.instances[name].updateElement(); 
+$('#question_body').trigger('keyup');
+}
+}
+</script>
 
 

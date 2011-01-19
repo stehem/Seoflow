@@ -1,4 +1,8 @@
 $('.answers').append("<%= escape_javascript(render(:partial => "answers/answer", :object => @answer)) %>");  
 $("div#answer_<%= @answer.id %>").effect("pulsate", { times:3 }, 500);
-$("textarea#answer_body").val("");
-$("div.wmd-preview").empty();
+
+
+for(var name in CKEDITOR.instances) {
+CKEDITOR.instances[name].setData( '' ); 
+}; 
+
