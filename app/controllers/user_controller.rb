@@ -30,6 +30,9 @@ def show
   @user.increment!(:views)
   @a = Badge.count(:group => :badgeid, :conditions => {:user_id => @user.id})
   @b = Badgelist.find(@a.keys)
+  @title = @user.name
+  @desc = "Page profil de " + @user.name + " sur SEOFlow."
+  @robots='INDEX,FOLLOW'
   
 end
 

@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 %html
   %head
-    %title SEOFlow
+    %title 
+      =truncate(@title, :length => 70) || "SEOFlow"
+    %meta{:name => "Description", :content => truncate(@desc, :length => 170) || "SEO Flow est un site de questions réponses dédié à la thématique du référencement/SEO."}
+    %%meta{:name => "ROBOTS", :content => @robots || "NOINDEX,FOLLOW"}
 
     =stylesheet_link_tag("960_24")
     =stylesheet_link_tag("jquery-ui-1.8.5.custom")
@@ -30,7 +33,7 @@
             =link_to @current_user_login, user_path(session[:id])
             =link_to "Se déconnecter" , session_path , :method => :delete
           -else
-            =link_to "Login" , new_session_path 
+            =link_to "Connexion" , new_session_path 
           =flash[:message]
       .clear
 
@@ -78,7 +81,30 @@
 
     .clear
     .bottomline
-      footer shmooter
+      evil footer
 
 
+    <script type="text/javascript">
+    var uservoiceOptions = {
+    /* required */
+    key: 'seoflow',
+    host: 'seoflow.uservoice.com', 
+    forum: '97293',
+    showTab: true,  
+    /* optional */
+    alignment: 'left',
+    background_color:'#62920A', 
+    text_color: 'white',
+    hover_color: '#214263',
+    lang: 'fr'
+    };
 
+    function _loadUserVoice() {
+    var s = document.createElement('script');
+    s.setAttribute('type', 'text/javascript');
+    s.setAttribute('src', ("https:" == document.location.protocol ? "https://" : "http://") +   "cdn.uservoice.com/javascripts/widgets/tab.js");
+    document.getElementsByTagName('head')[0].appendChild(s);
+    }
+    _loadSuper = window.onload;
+    window.onload = (typeof window.onload != 'function') ? _loadUserVoice : function() { _loadSuper(); _loadUserVoice(); };
+    </script>

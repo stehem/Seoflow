@@ -30,7 +30,7 @@ def cleaner
 end
 
 def to_param
-  "#{id}#{Unicode::normalize_KD("-"+title).downcase.gsub(/[^a-z0-9\s_-]+/,'').gsub(/[\s_-]+/,'-')[0..100].chomp("-")}"
+  "#{id}#{Unicode::normalize_KD("-"+title).downcase.gsub(/[^a-z0-9\s_-]+/,'').gsub(/[\s_-]+/,'-')[0..75].chomp("-")}"
 end 
 
 end

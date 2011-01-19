@@ -20,11 +20,12 @@ def index
     end
     @questions = @questions.paginate(:page => params[:page] || 1, :per_page => 17)
     @active = "Activité"
-
   end
   @tags_counts =  Tag.count(:group => :tag, :limit => 10)
   @recent_badges = Badge.find(:all, :order => "created_at DESC", :limit => 10, :include => :user)
   @users = User.all(:order => 'created_at DESC', :limit => 5)
+  params[:page] ? @robots='NOINDEX,FOLLOW' : @robots='INDEX,FOLLOW'
+
 
 end
 

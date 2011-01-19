@@ -77,10 +77,6 @@ $('input#tags_box').one('focus', function() {
 toggle_rightbar('#r_tags');
 });
 
-$('textarea#question_body').one('focus', function() {
-toggle_rightbar('#r_question');
-});
-
 
 var toggle_rightbar = function(f){
 $('#display_gdl').hide(0);
@@ -160,6 +156,27 @@ $('ul.formats').removeClass("formats").addClass("formats_ie");
 }
 
 
+$('input#answer_submit_button').click(function() {
+validate_answer();
+});
+
+
+if (CKEDITOR.instances['answer_body'] != null){
+CKEDITOR.instances['answer_body'].on('contentDom', function() {
+CKEDITOR.instances['answer_body'].document.on('keyup', function(event) {
+CKEDITOR.instances['answer_body'].updateElement(); 
+$('#answer_body').trigger('keyup');
+});
+});
+}
+
+
+if (CKEDITOR.instances['question_body'] != null){
+CKEDITOR.instances['question_body'].on('focus', function() {
+toggle_rightbar('#r_question');
+});
+}
+
 
 /////////////////////////////////// Form Validations
 $("#reply_new").validate({
@@ -175,7 +192,11 @@ $(element).addClass("answer_form_validate");
 });
 
 
+function validate_answer(){
 $("#answer_new").validate({
+submitHandler: function() {
+$.post("/answers", $("#answer_new").serialize());
+},
 errorElement: "div",
 rules: {
 "answer[body]": {required: true}
@@ -184,7 +205,7 @@ messages: {
 "answer[body]": "Le champ ne peut pas être vide.",  
 }
 });
-
+};
 
 $("#new_question").validate({
 errorElement: "div",

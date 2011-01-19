@@ -2,7 +2,7 @@
 
   =flash.now[:error]
 
-  =form_for @answer , :as => :answer , :url => answers_path , :remote => true  do |f|
+  =form_for @answer , :as => :answer , :url => answers_path do |f|
     
     -if @answer.errors.any?
       .header
@@ -23,7 +23,7 @@
       :type => "hidden",
       :value => "#{question_id}"}
 
-    =submit_tag "Valider", :class => "custom_submit_bttn"
+    =submit_tag "Valider", :class => "custom_submit_bttn", :id => "answer_submit_button"
 
   
 
@@ -39,16 +39,4 @@ height:"150", width:"600"
 });
 </script>
 
-<script type="text/javascript">
-for(var name in CKEDITOR.instances) {
-CKEDITOR.instances[name].on("instanceReady", function() {
-this.document.on("keyup", updateValue);
-this.document.on("paste", updateValue);     
-}); 
 
-function updateValue() {
-CKEDITOR.instances[name].updateElement(); 
-$('#answer_body').trigger('keyup');
-}
-}
-</script>

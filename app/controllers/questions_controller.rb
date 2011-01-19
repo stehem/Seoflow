@@ -24,16 +24,14 @@ user = User.find(session[:id])
 end
 
 def show 
-
 @question = Question.find(params[:id] , :include => [:user, {:answers => [:user, {:replies => :user}]}, :tags] )
 tags =  @question.tags.inject([]) {|a,f| a << f.tag}
 @similars = Tag.all(:conditions => ["tag IN (:tags)", {:tags => tags}], :include => :question)
 
-  respond_with(@question,@answer = Answer.new, @fav = Favorite.find_by_user_id_and_question_id(session[:id],  @question.id), @similars)
-  @question.update_attribute(:views , @question.views + 1)
-  Badge.view_count(@question, @question.user)
+respond_with(@question,@answer = Answer.new, @fav = Favorite.find_by_user_id_and_question_id(session[:id],  @question.id), @similars,@title = @question.title,@desc = @question.title,@robots='INDEX,FOLLOW')
+@question.update_attribute(:views , @question.views + 1)
+Badge.view_count(@question, @question.user)
 
-  
 
 end
 
