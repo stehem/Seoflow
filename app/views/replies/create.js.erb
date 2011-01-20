@@ -3,7 +3,7 @@ var selector = "#replies_" + <%= @reply.answer_id %>
 $(selector).append('<div class="reply" id="reply_<%= @reply.id %>"><div class="reply_text"><%= escape_javascript @reply.body %></div><div class="reply_user_link"><%= escape_javascript link_to @reply.user_name, user_path(@reply.user) %></div></div><div class="clear"></div>');
 $("div#reply_<%= @reply.id %>").hide(0);
 $("div#reply_<%= @reply.id %>").fadeIn(2000);
-
+$("#reply_body").val('');
 
 
 <% if @badge %>

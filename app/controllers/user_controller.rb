@@ -33,6 +33,7 @@ def show
   @title = @user.name
   @desc = "Page profil de " + @user.name + " sur SEOFlow."
   @robots='INDEX,FOLLOW'
+  @canonical = '<link rel="canonical" href="http://www.seoflow.fr' + user_path(@user) + '">'
   
 end
 

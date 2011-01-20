@@ -87,9 +87,13 @@
       = "Il y a " + time_ago_in_words(@question.answers.last.created_at) 
   .similars
     %span{:class =>"home_side_headers"}Questions similaires:<br/>
-    -similars.each do |f|
-      - unless f.question.blank?
-        - unless @question.id == f.question.id
-          .similar
-            = link_to f.question.title, question_path(f.question)
-       
+    -if similars
+      -similars[0..9].each do |f|
+        - unless f.blank?
+          - unless @question.id == f.id
+            .similar
+              = link_to f.title, question_path(f)
+    -else
+      -similars_alt.each do |f|   
+        .similar
+          = link_to f.title, question_path(f) 

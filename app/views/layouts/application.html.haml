@@ -5,6 +5,9 @@
       =truncate(@title, :length => 70) || "SEOFlow"
     %meta{:name => "Description", :content => truncate(@desc, :length => 170) || "SEO Flow est un site de questions réponses dédié à la thématique du référencement/SEO."}
     %%meta{:name => "ROBOTS", :content => @robots || "NOINDEX,FOLLOW"}
+    - if @canonical
+      = raw @canonical
+
 
     =stylesheet_link_tag("960_24")
     =stylesheet_link_tag("jquery-ui-1.8.5.custom")

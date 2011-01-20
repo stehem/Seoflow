@@ -565,7 +565,8 @@ body {
   background-color: #eeeeee;
   line-height: 20px;
   padding: 10px;
-  margin-top: 10px; }
+  margin-top: 10px;
+  word-wrap: break-word; }
   .user_details_wrapper_right a {
     color: #214263; }
 

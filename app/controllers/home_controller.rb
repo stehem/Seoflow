@@ -24,7 +24,8 @@ def index
   @tags_counts =  Tag.count(:group => :tag, :limit => 10)
   @recent_badges = Badge.find(:all, :order => "created_at DESC", :limit => 10, :include => :user)
   @users = User.all(:order => 'created_at DESC', :limit => 5)
-  params[:page] ? @robots='NOINDEX,FOLLOW' : @robots='INDEX,FOLLOW'
+  params[:page] || params[:tag] ? @robots='NOINDEX,FOLLOW' : @robots='INDEX,FOLLOW'  
+  @canonical = '<link rel="canonical" href="http://www.seoflow.fr' + root_path + '">' unless params[:page] || params[:tag]
 
 
 end

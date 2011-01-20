@@ -26,9 +26,14 @@ end
 def show 
 @question = Question.find(params[:id] , :include => [:user, {:answers => [:user, {:replies => :user}]}, :tags] )
 tags =  @question.tags.inject([]) {|a,f| a << f.tag}
-@similars = Tag.all(:conditions => ["tag IN (:tags)", {:tags => tags}], :include => :question)
+a = Tag.all(:conditions => ["tag IN (:tags)", {:tags => tags}], :include => :question)
+if a.length != 1
+@similars = a.collect{|f| f.question}.uniq
+else
+@similars_alt = Question.find(:all,:limit => 10)
+end
 
-respond_with(@question,@answer = Answer.new, @fav = Favorite.find_by_user_id_and_question_id(session[:id],  @question.id), @similars,@title = @question.title,@desc = @question.title,@robots='INDEX,FOLLOW')
+respond_with(@question,@answer = Answer.new, @fav = Favorite.find_by_user_id_and_question_id(session[:id],  @question.id), @similars,@title = @question.title,@desc = @question.title,@robots='INDEX,FOLLOW',@canonical = '<link rel="canonical" href="http://www.seoflow.fr' + question_path(@question) + '">')
 @question.update_attribute(:views , @question.views + 1)
 Badge.view_count(@question, @question.user)
 

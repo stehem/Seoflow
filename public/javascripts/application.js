@@ -155,8 +155,15 @@ if ($.browser.msie) {
 $('ul.formats').removeClass("formats").addClass("formats_ie");
 }
 
+$('input.reply_submit_button').click(function() {
+validate_reply();
+});
+
+
+/////////////////////////////////// ceekay editor validation voodoo
 
 $('input#answer_submit_button').click(function() {
+CKEDITOR.instances['answer_body'].updateElement(); 
 validate_answer();
 });
 
@@ -179,7 +186,12 @@ toggle_rightbar('#r_question');
 
 
 /////////////////////////////////// Form Validations
+
+function validate_reply(){
 $("#reply_new").validate({
+submitHandler: function() {
+$.post("/replies", $("#reply_new").serialize());
+},
 rules: {
 "reply[body]": {required: true}
 },
@@ -190,7 +202,7 @@ highlight: function(element, errorClass) {
 $(element).addClass("answer_form_validate");
 }
 });
-
+};
 
 function validate_answer(){
 $("#answer_new").validate({
@@ -258,7 +270,7 @@ messages: {
 
 $("#user_edit").validate({
 errorLabelContainer: "#error_container",
-wrapper: "div",
+wrapper: "span",
 rules: {
 "user[email]": {email: true},
 "user[website]": {url: true},
