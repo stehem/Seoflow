@@ -16,14 +16,7 @@ return false;
 });
 
 
-function clear_hidden_tag_values (){
-$("input#question_tag1").val("");
-$("input#question_tag2").val("");
-$("input#question_tag3").val("");
-};
 
-
-clear_hidden_tag_values ();
 
 
 $("a.reset_tags").click(function () {
