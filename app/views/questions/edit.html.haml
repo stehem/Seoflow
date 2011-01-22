@@ -1,0 +1,83 @@
+.new_question_wrapper
+  .new_question_hdr
+    %span{:class =>"home_side_headers"}Poster une question:
+
+  =form_for @question, :url => question_path(@question.id), :method => "put"  do |f|
+    %div
+      %span{:class =>"home_side_headers"}Titre:
+    %div
+      =f.text_field :title, :class => "question_form_field"
+    <br/>
+    %div
+      %span{:class =>"home_side_headers"}Tags:
+    .tags
+      -@question.tags.each do |g|
+        .selected_tags
+          =g.tag
+
+    
+    %input{:id => "tags_box", :class => "question_form_field", :name => "tags[box]"}
+      <a href="#" id="add_link">Ajouter</a>
+      <input type="hidden" id="question_tag1" name="tag1" value="" />
+      <input type="hidden" id="question_tag2" name="tag2" value="" />
+      <input type="hidden" id="question_tag3" name="tag3" value="" />
+
+
+    .reset_tags
+      <a href="#" class="reset_tags">Effacer les tags</a>
+
+    <br/>
+
+    %div
+      %span{:class =>"home_side_headers"}Question:
+    %div
+      =f.text_area :body, :class => "question_form_field"
+
+ 
+    %div{:id => "question_submit"}
+      =submit_tag "Valider", :class => "custom_submit_bttn"
+
+
+-content_for :rightbar do
+  = render "rightbar"
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+var tags = $(".selected_tags");
+var i = 1;
+$.each(tags, function() {
+tag = $(this).text().trim();
+var field = "input#question_tag"+i;
+$(field).val(tag);
+i++;
+});   
+});
+</script>
+
+
+
+<script type="text/javascript">
+CKEDITOR.replace( 'question[body]',
+{
+toolbar : 'Basic',
+uiColor : '#F5F5DC',
+height:"200", width:"600" 
+});
+</script>
+
+<script type="text/javascript">
+for(var name in CKEDITOR.instances) {
+CKEDITOR.instances[name].on("instanceReady", function() {
+this.document.on("keyup", updateValue);
+this.document.on("paste", updateValue);     
+}); 
+
+function updateValue() {
+CKEDITOR.instances[name].updateElement(); 
+$('#question_body').trigger('keyup');
+}
+}
+</script>
+
+
