@@ -1,6 +1,6 @@
 3.0.9 (Classy Cassidy)
-2954ab916a3761f4a4f2e2548dcf5ff762aeaecd
-o:Sass::Tree::RootNode	:@template"D$orange: #FF6600
+80a659ab164cf4c15edbf6787d954b12b2845b9e
+o:Sass::Tree::RootNode	:@template"ZD$orange: #FF6600
 $blue: #214263
 $rightbar: #FFF8DC
 $body: #FFFAFA
@@ -1172,10 +1172,14 @@ p
 .guidelines
   color: gray
 
-
+#cancel_answer_edit
+  color: $blue
+  font-size: 75%
+  font-style: italic
+  
 :@options{:css_filename"styles.css:
 style:nested:line_comments0:cache_location"./.sass-cache:always_updateF:property_syntax0:load_paths[".:
-cacheT:always_checkT:full_exceptionT:syntax:	sass:filename"styles.sass:css_location"./public/stylesheets:template_location[ :@has_childrenT:@children[Œo:Sass::Tree::VariableNode:
+cacheT:always_checkT:full_exceptionT:syntax:	sass:filename"styles.sass:css_location"./public/stylesheets:template_location[ :@has_childrenT:@children[œo:Sass::Tree::VariableNode:
 @linei;@:@filename@;[ :@guarded0:
 @name"orange:
 @expro:Sass::Script::Color
@@ -1789,4 +1793,6 @@ widtho;,;iç;*i ;@;&o;4
 right;5;6;';(;@;[ ;.;/;["
 floato;);iè;*i ;@;T;+["#error_container;@;[o;,;iê;*i ;@;&o;0;iê;1;=;@;3o;9;iê;@;:"0;&i ;;[ ;';(;<[ ;';(;7o;0;iê;1;=;@;3o;9;iê;@;:"	10px;&i;;[ ;';(;<["px;';(;7o;0;iê;1;=;@;3o;9;iê;@;:"0;&i ;;[ ;';(;<[ ;';(;7o;9;iê;@;:"	10px;&i;;[ ;';(;<["px;@;[ ;.;/;["paddingo;);ií;*i ;@;T;+[".guidelines;@;[o;,;iì;*i ;@;&o; 
 ;iì;!{	;"iÄ;#iÄ;$i;%iÄ;@;&0;';(;@;[ ;.;/;["
-color
+coloro;);iï;*i ;@;T;+["#cancel_answer_edit;@;[o;,;iñ;*i ;@;&o;-	;iñ;@;';(;"	blue;@;[ ;.;/;["
+coloro;,;ió;*i ;@;&o;9;ió;@;:"75%;&iP;;[ ;';(;<["%;@;[ ;.;/;["font-sizeo;,;iò;*i ;@;&o;4
+;iò;@;&"italic;5;6;';(;@;[ ;.;/;["font-style

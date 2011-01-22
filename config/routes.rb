@@ -7,7 +7,9 @@ Sixsoon2::Application.routes.draw do
   resources :search
   resources :votes
   resources :replies
-  resources :answers 
+  resources :answers do
+      get 'cancel_edit', :on => :member
+  end
   resources :badges
   resources :tags
   resources :questions do

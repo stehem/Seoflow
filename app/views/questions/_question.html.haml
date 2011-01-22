@@ -45,7 +45,7 @@
       =raw @question.body 
       - if session[:id] == @question.user.id
         .clear
-        = link_to "Modifier", edit_question_path(@question), :remote => true, :class => 'modify_link'
+        = link_to "Modifier", edit_question_path(@question), :class => 'modify_link'
     .grid_4.push_13.stats_wrapper
       =render :partial => "answers/userstats2", :object => @question, :as => :item
 

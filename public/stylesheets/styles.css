@@ -1084,3 +1084,8 @@ p {
 
 .guidelines {
   color: gray; }
+
+#cancel_answer_edit {
+  color: #214263;
+  font-size: 75%;
+  font-style: italic; }

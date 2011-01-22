@@ -21,7 +21,7 @@ end
 def update
 @answer = Answer.find(params[:id])
 if @answer.user.id == session[:id]
-  @answer.update_attribute(:body, params[:answer][:body])
+  @answer.update_attribute(:body, params[:answer][:edit])
   @badge = Badge.first_edit(@answer.user)
 end
 end
@@ -35,6 +35,9 @@ if @answer.user.id == session[:id]
 end
 end
 
+def cancel_edit
+@answer = Answer.find(params[:id])
+end
 
 
 end

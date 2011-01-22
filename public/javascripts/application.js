@@ -159,6 +159,31 @@ $('input.reply_submit_button').click(function() {
 validate_reply();
 });
 
+$('a.answer_edit_link').live("click",function() {
+if (CKEDITOR.instances['answer_edit'] != null){
+alert ("Vous devez annuler l'édition déja en court avant d'en ouvrir une autre.");
+return false;
+}
+else {
+$.get('/answers/'+this.id+'/edit/');
+return false;
+}
+});
+
+
+$('#submit_answer_edit').live("click",function() {
+CKEDITOR.instances['answer_edit'].updateElement(); 
+var url = $("#answer_edit").attr("action");
+validate_answer_edit(url);
+});
+
+
+$('a#cancel_answer_edit').live("click",function() {
+var url = $("a#cancel_answer_edit").attr("url");
+$.get(url);
+return false;
+});
+
 
 /////////////////////////////////// ceekay editor validation voodoo
 
@@ -219,7 +244,48 @@ messages: {
 });
 };
 
+
+function validate_answer_edit(url){
+$("#answer_edit").validate({
+submitHandler: function() {
+$.post(url, $("#answer_edit").serialize());
+},
+errorElement: "div",
+rules: {
+"answer[edit]": {required: true}
+},
+messages: {
+"answer[edit]": "Le champ ne peut pas être vide.",  
+}
+});
+};
+
+
+
 $("#new_question").validate({
+errorElement: "div",
+rules: {
+"question[title]": {
+required: true,
+maxlength: 200},
+"question[body]": {required: true},
+"tag1": {required: true, maxlength: 30}
+},
+messages: {
+"question[title]": {
+maxlength: "Le titre ne peut pas excéder 200 caractères.",
+required: "Le titre ne peut pas être vide."
+}
+,  
+"question[body]": "Le corps de la question ne peut pas être vide.",
+"tag1": {
+required: "Vous devez ajouter au moins un tag.",
+maxlength: "Le tag ne peut pas excéder 30 caractères."}
+}
+});
+
+
+$(".edit_question").validate({
 errorElement: "div",
 rules: {
 "question[title]": {

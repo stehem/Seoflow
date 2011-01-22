@@ -1,5 +1,26 @@
-=form_for @answer , :as => :answer , :url => answer_path(@answer.id) , :remote => true, :method => "put"  do |f|
+=form_for @answer , :as => :answer , :url => answer_path(@answer.id), :method => "put"  do |f|
   %div
-    =f.text_area :body
+    =f.text_area :body, :name => "answer[edit]", :id => "answer_edit"
     .clear
-    =submit_tag "Sauvegarder"
+    =submit_tag "Modifier", :id => "submit_answer_edit"
+=link_to "Annuler", "#", :id => "cancel_answer_edit", :url => cancel_edit_answer_path(@answer.id)
+
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+var wrapper = "#reply_edit_wrapper_#{@answer.id}";
+$(wrapper).hide();
+if (CKEDITOR.instances['answer_edit'] != null) {
+delete CKEDITOR.instances['answer_edit'];
+}
+CKEDITOR.replace( 'answer[edit]',
+{
+toolbar : 'Basic',
+uiColor : '#F5F5DC',
+height:"150", width:"600" 
+});
+
+});
+</script>
+

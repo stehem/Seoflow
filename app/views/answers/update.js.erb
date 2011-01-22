@@ -4,6 +4,12 @@ $(selector).hide();
 $(selector).append("<%= escape_javascript(raw @answer.body) %>");  
 $(selector).fadeIn(1000);
 
+if (CKEDITOR.instances['answer_edit'] != null){
+delete CKEDITOR.instances['answer_edit'];
+}
+
+var wrapper = "#reply_edit_wrapper_" + <%= @answer.id %>;
+$(wrapper).show();
 
 <% if @badge %>
   $.notifyBar({

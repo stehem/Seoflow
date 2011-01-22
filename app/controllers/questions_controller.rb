@@ -51,14 +51,19 @@ def solved
 end
 
 def edit
-  @question = Question.find(params[:id])
+  @question = Question.find(params[:id], :include => :tags)
 end
 
 def update
   @question = Question.find(params[:id])
+  @question.tags.each {|e| e.destroy}
+    [params[:tag1], params[:tag2], params[:tag3]].each do |f|
+      @question.tags.create(:tag => format_tags(f)) unless f.empty?
+    end 
   if @question.user.id == session[:id]
-    @question.update_attribute(:body, params[:question][:body])
+    @question.update_attributes(params[:question])
     @badge = Badge.first_edit(@question.user)
+    redirect_to @question
   end
 end
 
