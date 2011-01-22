@@ -18,9 +18,9 @@
     
     %input{:id => "tags_box", :class => "question_form_field", :name => "tags[box]"}
       <a href="#" id="add_link">Ajouter</a>
-      <input type="hidden" id="question_tag1" name="tag1" value="" />
-      <input type="hidden" id="question_tag2" name="tag2" value="" />
-      <input type="hidden" id="question_tag3" name="tag3" value="" />
+      <input type="hidden" id="question_tag1" name="tag1" value="#{ @question.tags[0].tag if @question.tags[0]}" />
+      <input type="hidden" id="question_tag2" name="tag2" value="#{ @question.tags[1].tag if @question.tags[1] }" />
+      <input type="hidden" id="question_tag3" name="tag3" value="#{ @question.tags[2].tag if @question.tags[2]}" />
 
 
     .reset_tags
@@ -42,18 +42,7 @@
   = render "rightbar"
 
 
-<script type="text/javascript">
-$(document).ready(function() {
-var tags = $(".selected_tags");
-var i = 1;
-$.each(tags, function() {
-tag = $(this).text().trim();
-var field = "input#question_tag"+i;
-$(field).val(tag);
-i++;
-});   
-});
-</script>
+
 
 
 
