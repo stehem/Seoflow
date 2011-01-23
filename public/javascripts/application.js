@@ -62,6 +62,14 @@ $("a#add_link").fadeOut('slow');
 }
 
 
+var clear_hidden_tag_values = function(){
+$("input#question_tag1").val("");
+$("input#question_tag2").val("");
+$("input#question_tag3").val("");
+}
+
+
+
 $('input#question_title').one('focus', function() {
 toggle_rightbar('#r_title');
 });
