@@ -50,7 +50,9 @@ height:"200", width:"600"
 
 <script type="text/javascript">
 $(document).ready(function() {
-clear_hidden_tag_values ();
+$("input#question_tag1").val("");
+$("input#question_tag2").val("");
+$("input#question_tag3").val("");
 for(var name in CKEDITOR.instances) {
 CKEDITOR.instances[name].on("instanceReady", function() {
 this.document.on("keyup", updateValue);
