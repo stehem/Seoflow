@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   end
 
   def format_tags(input)
-   Sanitize.clean(input, Sanitize::Config::RESTRICTED).strip.gsub(/ +/,'-')
+   Sanitize.clean(input).strip.gsub(/ +/,'-')
   end
 
   #def check_uri

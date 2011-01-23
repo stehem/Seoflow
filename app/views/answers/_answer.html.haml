@@ -57,6 +57,7 @@
       .reply_link
         %a{:href => "#", :class => "reply_link", :id => "#{answer.id}", :title => "Pour commenter une réponse."} Commenter
 
+    -if session[:id] == answer.user.id
       .edit_link
         =link_to "Modifier", edit_answer_path(answer.id), :class => "answer_edit_link", :id => answer.id.to_s
         =link_to "Effacer", answer_path(answer.id), :remote => true, :method => "delete", :confirm => "Effacer cette réponse?"

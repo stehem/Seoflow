@@ -19,6 +19,10 @@ attr_accessor :password_confirmation, :password, :local, :upd
 attr_accessible :name, :email, :realname, :website, :age, :ville, :password, :password_confirmation, :bio
 
 
+def cleaner
+  self.name = Sanitize.clean(self.name)
+  self.password = Sanitize.clean(self.password)
+end
 
 
 def encrypt_password

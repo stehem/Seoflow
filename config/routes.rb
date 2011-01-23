@@ -1,6 +1,7 @@
 Sixsoon2::Application.routes.draw do
   match "/auth/:provider/callback" => "sessions#create"  
   match "/user/validate_user_name" => "user#validate_user_name"
+  match "/faq" => "home#faq"
 
   root :to => "home#index" 
   resources :favorites
@@ -16,9 +17,7 @@ Sixsoon2::Application.routes.draw do
       post 'solved', :on => :member
   end
   resources :user 
-  resource :session do
-    post 'rpx_token', :on => :member
-  end
+  resource :session
 
 
 

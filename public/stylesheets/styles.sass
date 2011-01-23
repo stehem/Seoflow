@@ -464,6 +464,7 @@ body
   display: inline-block
   margin-bottom: 2px
   font-size: 85%
+  color: gray
 
 .reply_box_hidden
   display: none
@@ -737,6 +738,7 @@ $lightgrey: #666
   position: relative
   -webkit-border-radius: 10px 0 10px 10px
   -moz-border-radius: 10px 0 10px 10px
+  overflow: hidden
 
 .badge_desc
   float: left
@@ -754,7 +756,7 @@ $lightgrey: #666
   right: 0
   border-width: 0 16px 16px 0
   border-style: solid
-  border-color: #D3D3D3 $body
+  border-color: #D3D3D3 $body 
   -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2)
   -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2)
   box-shadow: 0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2)
@@ -796,6 +798,7 @@ $lightgrey: #666
   position: relative
   -webkit-border-radius: 10px 0 10px 10px
   -moz-border-radius: 10px 0 10px 10px
+  overflow: hidden
 
 .recent_badges:before 
   @include folded
@@ -810,6 +813,7 @@ $lightgrey: #666
     color: $blue
   -webkit-border-radius: 10px 0 10px 10px
   -moz-border-radius: 10px 0 10px 10px
+  overflow: hidden
 
 .intro:before
   @include folded
@@ -878,6 +882,8 @@ $lightgrey: #666
   background: $light_beige_pastel
   padding: 10px
   position: relative
+  word-wrap: break-word  
+  overflow: hidden
 
 .similars:before 
   @include folded
@@ -1174,4 +1180,24 @@ p
   color: $blue
   font-size: 75%
   font-style: italic
+
+.faq
+  background: $light_beige_pastel
+  -webkit-border-radius: 10px
+  -moz-border-radius: 10px
+  margin-top: 25px
+  padding: 10px
+
+.faqlist
+  margin-top: 15px
+  li
+    padding: 5px 0 5px 0
+
+.faq_ans
+  background: $body
+  padding: 5px
+  margin-top: 5px
+
+
+
   

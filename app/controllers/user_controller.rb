@@ -9,6 +9,7 @@ respond_to :html, :js
 
   def create
     @user = User.new(params[:user])
+    @user.cleaner
     @user.local = "true"
     @user.encrypt_password
       if @user.save 
@@ -50,7 +51,7 @@ def update
   if session[:id] == @user.id
     attrib = [:realname, :website, :ville, :age, :email, :bio]
     attrib.each do |f|
-      @user[f] = Sanitize.clean(params[:user][f], Sanitize::Config::RESTRICTED)
+      @user[f] = Sanitize.clean(params[:user][f])
     end
     @user.upd = "true"
     @user.update_attributes!(attrib)

@@ -166,7 +166,7 @@ alert ("Vous devez annuler l'édition déja en court avant d'en ouvrir une autre
 return false;
 }
 else {
-$.get('/answers/'+this.id+'/edit/?random='+ Math.floor(Math.random()*100));
+$.get('/answers/'+this.id+'/edit/?random='+ Math.floor(Math.random()*100)); ////random for avoiding IE caching the request
 return false;
 }
 });

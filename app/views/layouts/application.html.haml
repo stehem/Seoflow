@@ -65,6 +65,8 @@
           =yield
         .grid_6.omega.rightbar
           .global_search
+            %span{:class => "home_side_headers"}
+              Rechercher:
             =form_tag questions_path, :method => 'get' do 
               = text_field_tag :search, params[:search] 
             .clear
@@ -111,3 +113,5 @@
     _loadSuper = window.onload;
     window.onload = (typeof window.onload != 'function') ? _loadUserVoice : function() { _loadSuper(); _loadUserVoice(); };
     </script>
+
+

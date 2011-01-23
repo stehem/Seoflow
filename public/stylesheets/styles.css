@@ -382,7 +382,8 @@ body {
   float: right;
   display: inline-block;
   margin-bottom: 2px;
-  font-size: 85%; }
+  font-size: 85%;
+  color: gray; }
 
 .reply_box_hidden {
   display: none; }
@@ -638,7 +639,8 @@ body {
   background: #fffacd;
   position: relative;
   -webkit-border-radius: 10px 0 10px 10px;
-  -moz-border-radius: 10px 0 10px 10px; }
+  -moz-border-radius: 10px 0 10px 10px;
+  overflow: hidden; }
 
 .badge_desc {
   float: left;
@@ -694,7 +696,8 @@ body {
   margin: 20px 0;
   position: relative;
   -webkit-border-radius: 10px 0 10px 10px;
-  -moz-border-radius: 10px 0 10px 10px; }
+  -moz-border-radius: 10px 0 10px 10px;
+  overflow: hidden; }
   .recent_badges a {
     font-size: 12px;
     text-decoration: none; }
@@ -721,7 +724,8 @@ body {
   background: #e8f1de;
   position: relative;
   -webkit-border-radius: 10px 0 10px 10px;
-  -moz-border-radius: 10px 0 10px 10px; }
+  -moz-border-radius: 10px 0 10px 10px;
+  overflow: hidden; }
   .intro a {
     color: #214263; }
 
@@ -794,7 +798,9 @@ body {
 .similars {
   background: #f5f5dc;
   padding: 10px;
-  position: relative; }
+  position: relative;
+  word-wrap: break-word;
+  overflow: hidden; }
   .similars a:visited {
     color: #214263; }
   .similars a {
@@ -1089,3 +1095,20 @@ p {
   color: #214263;
   font-size: 75%;
   font-style: italic; }
+
+.faq {
+  background: #f5f5dc;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  margin-top: 25px;
+  padding: 10px; }
+
+.faqlist {
+  margin-top: 15px; }
+  .faqlist li {
+    padding: 5px 0 5px 0; }
+
+.faq_ans {
+  background: #fffafa;
+  padding: 5px;
+  margin-top: 5px; }

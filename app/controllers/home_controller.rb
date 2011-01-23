@@ -26,8 +26,9 @@ def index
   @users = User.all(:order => 'created_at DESC', :limit => 5)
   params[:page] || params[:tag] ? @robots='NOINDEX,FOLLOW' : @robots='INDEX,FOLLOW'  
   @canonical = '<link rel="canonical" href="http://www.seoflow.fr' + root_path + '">' unless params[:page] || params[:tag]
+end
 
-
+def faq
 end
 
 end

@@ -9,7 +9,7 @@
 
 
   .local_account
-    Ou connectez avec votre compte local:<br/><br/>
+    Ou connectez vous avec votre compte local:<br/><br/>
     = form_for @session , :url => { :action => "create", :local => "true" } do |f|
       .form_wrapper
         .form_label
@@ -26,7 +26,7 @@
     = flash[:message]
 
   .new_user_link
-    = link_to "Créer utilisateur" , new_user_path 
+    = link_to "Créer un compte" , new_user_path 
 
 
 

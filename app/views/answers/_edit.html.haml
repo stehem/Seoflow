@@ -2,7 +2,7 @@
   %div
     =f.text_area :body, :name => "answer[edit]", :id => "answer_edit"
     .clear
-    =submit_tag "Modifier", :id => "submit_answer_edit"
+    =submit_tag "Modifier", :id => "submit_answer_edit", :class => "custom_submit_bttn"
 =link_to "Annuler", "#", :id => "cancel_answer_edit", :url => cancel_edit_answer_path(@answer.id)
 
 
