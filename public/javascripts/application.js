@@ -167,7 +167,7 @@ return false;
 }
 else {
 $.get('/answers/'+this.id+'/edit/');
-return false;
+
 }
 });
 
