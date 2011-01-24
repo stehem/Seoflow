@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
 
   require 'sanitize'
-  before_filter :current_user#, :check_uri
+  before_filter :current_user, :check_uri
 
   def current_user
     if session[:login]
@@ -13,8 +13,8 @@ class ApplicationController < ActionController::Base
    Sanitize.clean(input).strip.gsub(/ +/,'-')
   end
 
-  #def check_uri
-    #redirect_to(request.protocol + "www." + request.host_with_port + request.request_uri , :status => :moved_permanently) if !/^www/.match(request.host)
-  #end
+  def check_uri
+    redirect_to(request.protocol + "www." + request.host_with_port + request.request_uri , :status => :moved_permanently) if !/^www/.match(request.host)
+  end
   
 end
