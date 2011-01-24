@@ -45,6 +45,9 @@ def solved
   if @question.user.id == session[:id]
     @question.update_attribute(:solved, params[:answer_id])
     @answer = Answer.find(params[:answer_id])
+      solver = @answer.user
+        Karma.create(:user_id => solver.id, :value => 30)
+        solver.increment!(:sum_of_karma, by = 30)
     @answer.update_attribute(:solved, "1")
     Badge.accepted_answer(@answer,@answer.user)
   end

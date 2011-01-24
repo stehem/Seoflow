@@ -33,10 +33,12 @@
         .grid_24.topright
           -if @current_user_login
             Identifié en tant que 
-            =link_to @current_user_login, user_path(session[:id])
+            =link_to @current_user_login, "/user/"+session[:id].to_s+"-"+session[:login]
             =link_to "Se déconnecter" , session_path , :method => :delete
           -else
-            =link_to "Connexion" , new_session_path 
+            =link_to image_tag("sign-in-with-twitter-l.png"), "/auth/twitter"
+            .login_link
+              =link_to "Connexion" , new_session_path 
           =flash[:message]
       .clear
 

@@ -4,11 +4,10 @@ body {
   margin: 0px; }
 
 .topline {
-  height: 15px;
+  height: 20px;
   margin-bottom: 5px;
   background: #dcdcdc;
-  padding-top: 2px;
-  padding-bottom: 2px; }
+  padding: 2px 0 1px 0; }
 
 .topline a {
   color: #14273b; }
@@ -1112,3 +1111,7 @@ p {
   background: #fffafa;
   padding: 5px;
   margin-top: 5px; }
+
+.login_link {
+  float: right;
+  margin-left: 10px; }

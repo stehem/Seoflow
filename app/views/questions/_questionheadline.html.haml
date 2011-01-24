@@ -22,7 +22,13 @@
         <a href="/?tag=#{f.tag}"><div class="selected_tags" id="#{f.tag}">#{f.tag}</div></a>
       
     .userheadline
-      ="Il y a " + time_ago_in_words(questionheadline.created_at)
+      - if !params[:filter] 
+        - if questionheadline.answers.blank?
+          ="Il y a " + time_ago_in_words(questionheadline.created_at)
+        - else
+          ="Il y a " + time_ago_in_words(questionheadline.answers.last.created_at)
+      - else
+        ="Il y a " + time_ago_in_words(questionheadline.created_at)
   .clear
 
 

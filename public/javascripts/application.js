@@ -17,8 +17,6 @@ return false;
 
 
 
-
-
 $("a.reset_tags").click(function () {
 $("div[class='selected_tags']").remove();
 clear_hidden_tag_values ();
@@ -181,7 +179,7 @@ validate_answer_edit(url);
 
 $('a#cancel_answer_edit').live("click",function() {
 var url = $("a#cancel_answer_edit").attr("url");
-$.get(url);
+$.get(url+'?random='+Math.floor(Math.random()*100));
 return false;
 });
 

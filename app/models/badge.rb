@@ -108,7 +108,7 @@ end
 def self.accepted_answer(item,poster)
   if item.sum_of_votes > 0 && item.sum_of_votes < 3 && !Badge.find_by_user_id_and_answer_id(poster.id, item.id, :conditions => {:badge_name => "Prof"})
     Badge.create(:user_id => poster.id, :badge_name => "Prof", :metal => "Bronze", :badgeid => 14)
-    Notifier.create(:user_id => poster.id, :answer_id => item.id, :badge_name => "Prof", :metal => "Bronze")
+    Notifier.create(:user_id => poster.id, :badge_name => "Prof", :metal => "Bronze")
     poster.increment!(:sum_of_bronze, by = 1)
   elsif item.sum_of_votes > 2 && item.sum_of_votes < 5 && !Badge.find_by_user_id_and_answer_id(poster.id, item.id, :conditions => {:badge_name => "Éclairé"})
     Badge.create(:user_id => poster.id, :answer_id => item.id, :badge_name => "Éclairé", :metal => "Silver", :badgeid => 15)
