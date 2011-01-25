@@ -16,7 +16,7 @@ end
 def tags_search
 query = "%#{params[:filter]}%"
 if params[:filter].blank?
-  @tags = Tag.count(:all, :group => :tag, :order => 'count(tag) DESC').to_a.paginate(:per_page => 40, :page => params[:page])
+  @tags = Tag.count(:group => :tag, :order => 'count(tag) DESC').to_a.paginate(:per_page => 40, :page => params[:page])
 else
   @tags = Tag.count(:group => :tag, :conditions => ["tag LIKE ?", query], :order => 'count(tag) DESC').to_a.paginate(:per_page => 40, :page => params[:page])
 end
