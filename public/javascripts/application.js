@@ -22,6 +22,7 @@ $("div[class='selected_tags']").remove();
 clear_hidden_tag_values ();
 $('#tags_box').show('slow');
 $("a#add_link").show('slow');
+return false;
 });
 
 
