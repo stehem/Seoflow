@@ -88,7 +88,8 @@ $('#display_gdl').fadeIn(1000);
 $("input#tags_search").typeWatch({callback:finished,wait:750,highlight:true,captureLength:-1});
 
 function finished(txt) {
-$.get("/autocomplete/tags_search?filter="+txt+"?random="+ Math.floor(Math.random()*100));
+$.get("/autocomplete/tags_search?filter="+txt+"&random="+ Math.floor(Math.random()*100));
+}
 
 
 $("input#users_search").typeWatch({callback:finished_users,wait:750,highlight:true,captureLength:-1});
