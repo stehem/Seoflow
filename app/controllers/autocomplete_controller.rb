@@ -14,8 +14,12 @@ items.collect {|i| {"label" => i.tag, "value" => i.tag}}
 end
 
 def tags_search
-params[:filter].blank? ? query = "%%%" : query = "%#{params[:filter]}%"
-@tags = Tag.count(:group => :tag, :conditions => ["tag LIKE ?", query], :order => 'count(tag) DESC').to_a.paginate(:per_page => 40, :page => params[:page])
+query = "%#{params[:filter]}%"
+if params[:filter].blank?
+  @tags = Tag.count(:group => :tag).to_a.paginate(:per_page => 40, :page => params[:page])
+else
+  @tags = Tag.count(:group => :tag, :conditions => ["tag LIKE ?", query], :order => 'count(tag) DESC').to_a.paginate(:per_page => 40, :page => params[:page])
+end
 end
 
 def users_search
