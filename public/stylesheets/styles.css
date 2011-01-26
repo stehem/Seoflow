@@ -846,6 +846,8 @@ body {
 
 .social_icons {
   padding: 10px; }
+  .social_icons img {
+    padding-right: 10px; }
 
 .tags_page {
   background: #f5f5dc;
