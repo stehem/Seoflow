@@ -33,7 +33,7 @@ else
 @similars_alt = Question.find(:all,:limit => 10, :order => "created_at DESC")
 end
 
-respond_with(@question,@answer = Answer.new, @fav = Favorite.find_by_user_id_and_question_id(session[:id],  @question.id), @similars,@title = @question.title,@desc = @question.title,@robots='INDEX,FOLLOW',@canonical = '<link rel="canonical" href="http://www.seoflow.fr' + question_path(@question) + '">')
+respond_with(@question,@answer = Answer.new, @fav = Favorite.find_by_user_id_and_question_id(session[:id],  @question.id), @similars,@title = @question.title,@desc = @question.body,@robots='INDEX,FOLLOW',@canonical = '<link rel="canonical" href="http://www.seoflow.fr' + question_path(@question) + '">')
 @question.update_attribute(:views , @question.views + 1)
 Badge.view_count(@question, @question.user)
 

@@ -2,8 +2,8 @@
 %html
   %head
     %title 
-      =truncate(@title, :length => 70) || "SEOFlow"
-    %meta{:name => "Description", :content => truncate(@desc, :length => 170) || "SEO Flow est un site de questions réponses dédié à la thématique du référencement/SEO."}
+      =truncate(@title, :length => 70) || "SEOFlow | Questions & Réponses sur le référencement"
+    %meta{:name => "Description", :content => truncate(strip_tags(@desc), :length => 170) || "SEO Flow est un site de questions réponses dédié à la thématique du référencement/SEO."}
     %%meta{:name => "ROBOTS", :content => @robots || "NOINDEX,FOLLOW"}
     - if @canonical
       = raw @canonical
@@ -80,7 +80,7 @@
 
 
     -if !session[:id] && !session[:first]
-      =render :partial => "home/notify2.js.erb", :locals => {:message => "Bienvenue sur SEO Flow"}
+      =render :partial => "home/notify2.js.erb", :locals => {:message => "Bienvenue sur SEOFlow"}
       -session[:first] = true 
     
     #spinner

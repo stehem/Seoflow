@@ -11,8 +11,8 @@ if session[:id]
     user = User.find(session[:id])
     @question = Question.find(params[:question_id])
     poster = @question.user
-      #if !Vote.has_voted_already_question(@question.id, user)
-        #if !Vote.voting_on_self(poster.id, user.id)
+      if !Vote.has_voted_already_question(@question.id, user)
+        if !Vote.voting_on_self(poster.id, user.id)
           if params[:pos] == "true"
             @badge = Badge.upvote_global(user,poster,@question)
             Badge.upvotes_received(@question,poster)
@@ -33,19 +33,19 @@ if session[:id]
 		poster.increment!(:sum_of_karma, by = -5)
               end
           end
-        #else
-          #@flag = "self_voting"
-        #end
-      #else
-        #@flag = "already_voted"
-      #end
+        else
+          @flag = "self_voting"
+        end
+      else
+        @flag = "already_voted"
+      end
   elsif params[:item] == "answer"
     @item = "answer"
     user = User.find(session[:id])
     @answer = Answer.find(params[:answer_id])
     poster = @answer.user  
-      #if !Vote.has_voted_already_answer(@answer.id, user)
-        #if !Vote.voting_on_self(poster.id, user.id)
+      if !Vote.has_voted_already_answer(@answer.id, user)
+        if !Vote.voting_on_self(poster.id, user.id)
           if params[:pos] == "true"
             @badge = Badge.upvote_global(user,poster,@answer)
             Badge.upvotes_received(@answer,poster)
@@ -66,13 +66,16 @@ if session[:id]
 		poster.increment!(:sum_of_karma, by = -5)
               end
           end
+
+        else
+          @flag = "self_voting"
+          @answer_id = params[:answer_id]
+        end
+      else
+        @flag = "already_voted"
+          @answer_id = params[:answer_id]
+      end
   end
-        #else
-          #@flag = "self_voting"
-        #end
-      #else
-        #@flag = "already_voted"
-      #end
 else
   if params[:item] == "question"
     @item = "question"

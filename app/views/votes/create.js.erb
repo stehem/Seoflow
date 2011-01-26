@@ -15,10 +15,20 @@ $("div.question_left").append("<%= escape_javascript(render(:partial => "session
 <% elsif @flag == "not_logged_in" && @item == "answer" %>
 $("div#answer_votes_<%= @answer_id %>").append("<%= escape_javascript(render(:partial => "sessions/error", :locals => {:message => "Vous devez être identifié pour voter"})) %>");  
 
-<% elsif @flag == "self_voting" %>
-$("div.question_left").append("<%= escape_javascript(render(:partial => "sessions/error", :locals => {:message => "Pas de autovotage"})) %>");  
-<% elsif @flag == "already_voted" %>
+<% elsif @flag == "self_voting" && @item == "question" %>
+$("div.question_left").append("<%= escape_javascript(render(:partial => "sessions/error", :locals => {:message => "Vous ne pouvez pas voter sur votre propre question."})) %>");  
+
+<% elsif @flag == "self_voting" && @item == "answer" %>
+$("div#answer_votes_<%= @answer_id %>").append("<%= escape_javascript(render(:partial => "sessions/error", :locals => {:message => "Vous ne pouvez pas voter sur votre propre réponse."})) %>");
+
+
+<% elsif @flag == "already_voted" && @item == "question" %>
 $("div.question_left").append("<%= escape_javascript(render(:partial => "sessions/error", :locals => {:message => "Déja voté"})) %>");  
+
+<% elsif @flag == "already_voted" && @item == "answer" %>
+$("div#answer_votes_<%= @answer_id %>").append("<%= escape_javascript(render(:partial => "sessions/error", :locals => {:message => "Déja voté"})) %>");  
+
+
 <% end %>
 
 <% if @badge %>
