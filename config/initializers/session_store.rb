@@ -1,6 +1,6 @@
 # Be sure to restart your server when you modify this file.
 
-Sixsoon2::Application.config.session_store :cookie_store, :key => '_sixsoon2_session'
+Sixsoon2::Application.config.session_store :cookie_store, :key => '_seoflow_session'
 
 # Use the database for sessions instead of the cookie-based default,
 # which shouldn't be used to store highly confidential information

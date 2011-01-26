@@ -1,8 +1,7 @@
 .session_new_wrapper
 
   .social_icons
-    Connectez vous avec votre compte Google, Twitter ou Facebook:<br/><br/>
-    = link_to image_tag("google-large.png"), "/auth/google" 
+    Connectez vous avec votre compte Twitter ou Facebook:<br/><br/>
     = link_to image_tag("twitter-large.png"), "/auth/twitter" 
     = link_to image_tag("facebook-large.png"), "/auth/facebook" 
 
@@ -32,8 +31,6 @@
 
 -content_for :rightbar do 
   .intro
-    SEOFlow utilise les protocoles 
+    SEOFlow utilise le protocole
     =link_to "OAuth","http://fr.wikipedia.org/wiki/OAuth"
-    et 
-    =link_to "OpenID","http://fr.wikipedia.org/wiki/OpenID" 
-    pour vous permettre de vous connecter en utilisant votre compte Google, Twitter ou Facebook.<br/> Nous n'<b>accédons pas</b> à votre compte.
+    pour vous permettre de vous connecter en utilisant votre compte Twitter ou Facebook.<br/> Nous n'<b>accédons pas</b> à votre compte.
