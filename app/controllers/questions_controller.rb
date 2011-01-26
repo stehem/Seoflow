@@ -73,7 +73,8 @@ def update
 end
 
 def index
-  @results = Question.search(params[:search]).paginate(:order => "created_at DESC", :per_page => 10, :page => params[:page])
+  query = Sanitize.clean(params[:search])
+  @results = Question.search(query).paginate(:order => "created_at DESC", :per_page => 10, :page => params[:page])
 end
 
 

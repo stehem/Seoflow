@@ -1,4 +1,14 @@
+%div
+  Résultat de la recherche pour: 
+  <b>
+  = params[:search]
+  </b>
+  
+
 .results
-  =render :partial => "searchresults" , :collection => @results
+  - if !@results.empty?
+    =render :partial => "searchresults" , :collection => @results
+  - else
+    Pas de résultats.
 
 =will_paginate @results
