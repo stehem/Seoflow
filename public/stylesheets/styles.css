@@ -635,7 +635,7 @@ body {
 .user_tags {
   padding: 10px;
   margin: 10px 0 20px 0;
-  background: #fffacd;
+  background: #f5f5dc;
   position: relative;
   -webkit-border-radius: 10px 0 10px 10px;
   -moz-border-radius: 10px 0 10px 10px;
@@ -720,7 +720,7 @@ body {
 .intro {
   padding: 10px;
   margin: 20px 0 20px 0;
-  background: #e8f1de;
+  background: #e5e5e5;
   position: relative;
   -webkit-border-radius: 10px 0 10px 10px;
   -moz-border-radius: 10px 0 10px 10px;
@@ -744,7 +744,7 @@ body {
 
 .tags_and_count {
   display: inline-block;
-  width: 170px;
+  width: 230px;
   margin: 10px 0px 5px 0px;
   height: 30px; }
 
@@ -825,7 +825,8 @@ body {
   padding: 10px;
   background: #e8f1de;
   -webkit-border-radius: 10px;
-  -moz-border-radius: 10px; }
+  -moz-border-radius: 10px;
+  border: 1px solid lightgray; }
 
 .my_favorites {
   margin-top: 45px;
@@ -855,9 +856,6 @@ body {
   margin-top: 25px;
   -webkit-border-radius: 10px 10px 10px 10px;
   -moz-border-radius: 10px 10px 10px 10px; }
-
-.tags_and_count {
-  display: inline-block; }
 
 .selected_tags_page {
   background-color: #eeeeee;
@@ -1005,7 +1003,8 @@ p {
   border: 1px solid lightgray;
   -webkit-border-radius: 10px 10px 10px 10px;
   -moz-border-radius: 10px 10px 10px 10px;
-  margin-bottom: 15px; }
+  margin-bottom: 15px;
+  background: #e5e5e5; }
 
 .fb {
   float: left;

@@ -4,7 +4,7 @@
     %title 
       =truncate(@title, :length => 70) || "SEOFlow | Questions & Réponses sur le référencement"
     %meta{:name => "Description", :content => truncate(strip_tags(@desc), :length => 170) || "SEO Flow est un site de questions réponses dédié à la thématique du référencement/SEO."}
-    %%meta{:name => "ROBOTS", :content => @robots || "NOINDEX,FOLLOW"}
+    %meta{:name => "ROBOTS", :content => @robots || "NOINDEX,FOLLOW"}
     - if @canonical
       = raw @canonical
 

@@ -35,6 +35,7 @@ $('input#tags_box').val("");
 $('input#tags_box').focus();
 check_number_of_selected_tags();
 }
+return false;
 });
 
 
@@ -210,6 +211,19 @@ toggle_rightbar('#r_question');
 }
 
 
+CKEDITOR.on( 'instanceReady', function( ev )
+{
+ev.editor.dataProcessor.writer.setRules( 'p',
+{
+indent : false,
+breakBeforeOpen : false,
+breakAfterOpen : false,
+breakBeforeClose : false,
+breakAfterClose : false
+});
+});
+
+
 /////////////////////////////////// Form Validations
 
 function validate_reply(){
@@ -269,7 +283,9 @@ rules: {
 required: true,
 maxlength: 200},
 "question[body]": {required: true},
-"tag1": {required: true, maxlength: 30}
+"tag1": {required: true, maxlength: 25},
+"tag2": {required: false, maxlength: 25},
+"tag3": {required: false, maxlength: 25}
 },
 messages: {
 "question[title]": {
@@ -280,7 +296,11 @@ required: "Le titre ne peut pas être vide."
 "question[body]": "Le corps de la question ne peut pas être vide.",
 "tag1": {
 required: "Vous devez ajouter au moins un tag.",
-maxlength: "Le tag ne peut pas excéder 30 caractères."}
+maxlength: "Les tags sont limités à 25 caractères."},
+"tag2": {
+maxlength: "Les tags sont limités à 25 caractères."},
+"tag3": {
+maxlength: "Les tags sont limités à 25 caractères."}
 }
 });
 
@@ -292,7 +312,9 @@ rules: {
 required: true,
 maxlength: 200},
 "question[body]": {required: true},
-"tag1": {required: true, maxlength: 30}
+"tag1": {required: true, maxlength: 25},
+"tag2": {required: false, maxlength: 25},
+"tag3": {required: false, maxlength: 25}
 },
 messages: {
 "question[title]": {
@@ -303,7 +325,11 @@ required: "Le titre ne peut pas être vide."
 "question[body]": "Le corps de la question ne peut pas être vide.",
 "tag1": {
 required: "Vous devez ajouter au moins un tag.",
-maxlength: "Le tag ne peut pas excéder 30 caractères."}
+maxlength: "Les tags sont limités à 25 caractères."},
+"tag2": {
+maxlength: "Les tags sont limités à 25 caractères."},
+"tag3": {
+maxlength: "Les tags sont limités à 25 caractères."}
 }
 });
 
