@@ -1019,7 +1019,8 @@ p {
   -webkit-border-radius: 10px 10px 10px 10px;
   -moz-border-radius: 10px 10px 10px 10px;
   margin-top: 15px;
-  margin-bottom: 15px; }
+  margin-bottom: 15px;
+  background: #e5e5e5; }
 
 .social_header {
   color: gray;
