@@ -6,7 +6,7 @@ has_many :badges
 has_many :favorites
 has_many :replies
 
-validates_presence_of :password_confirmation, :unless => :check_update, :check_social
+validates_presence_of :password_confirmation, :unless => :check_update, :unless => :check_social
 validates_confirmation_of :password
 validates_uniqueness_of :name, :case_sensitive => :false
 validates_presence_of :name, :password, :if => :check_local
