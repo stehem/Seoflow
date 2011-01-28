@@ -6,7 +6,7 @@ has_many :badges
 has_many :favorites
 has_many :replies
 
-validates_presence_of :password_confirmation, :unless => :check_update
+validates_presence_of :password_confirmation, :unless => :check_update, :check_social
 validates_confirmation_of :password
 validates_uniqueness_of :name, :case_sensitive => :false
 validates_presence_of :name, :password, :if => :check_local
@@ -15,7 +15,7 @@ validates_length_of :bio, :maximum=>200
 require 'digest/sha2'
 require 'unicode'
 
-attr_accessor :password_confirmation, :password, :local, :upd
+attr_accessor :password_confirmation, :password, :local, :upd, :twfb
 attr_accessible :name, :email, :realname, :website, :age, :ville, :password, :password_confirmation, :bio
 
 
@@ -36,6 +36,7 @@ def self.create_with_omniauth(auth)
     user.provider = auth["provider"]  
     user.uid = auth["uid"]  
     user.name = auth["user_info"]["name"]  
+    user.twfb = "1"
   end  
 end  
 
@@ -49,6 +50,10 @@ end
 
 def check_update
   return true if self.upd
+end
+
+def check_social
+  return true if self.twfb
 end
 
 end
